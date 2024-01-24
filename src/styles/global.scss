@@ -1,0 +1,66 @@
+$main-wight: 1104px;
+
+$main-font-color: rgb(244, 244, 245);
+$secondary-font-color: rgb(162, 162, 168);
+
+$main-font-family: "Inter", sans-serif;
+$secondary-font-family: "Red Hat Display", sans-serif;
+
+$font-size-h1: 88px;
+$font-size-h2: 56px;
+$font-size-p: 20px;
+$font-size-main: 16px;
+
+$main-letter-spacing: -0.01em;
+
+$main-background-color: rgb(29, 29, 32);
+$btn-color: rgb(58, 186, 180);
+$main-wight: 1104px;
+
+body {
+  background-color: $main-background-color;
+  letter-spacing: $main-letter-spacing;
+  line-height: 1.5;
+
+  font-family: $main-font-family;
+  color: $secondary-font-color;
+  font-size: $font-size-main;
+
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: $main-font-color;
+  font-family: $secondary-font-family;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+p {
+  color: $secondary-font-color;
+  font-size: $font-size-p;
+}
+
+.body-wrap {
+  max-width: 100vw;
+  overflow: hidden;
+  padding: 0px 1.5rem;
+}
+
+.right-top-background {
+  background-image: url(../../public/img/header-svg.svg);
+}
+
+
+@mixin wrapper {
+  max-width: $main-wight;
+  margin: 0 auto;
+  padding: 5rem 0;
+}

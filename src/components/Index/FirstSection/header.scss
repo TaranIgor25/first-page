@@ -1,0 +1,100 @@
+@import "../../../styles/global.scss";
+
+.header-wrapper{
+  display: flex;
+  justify-content: center;
+  height: 80px;
+}
+
+.header-content {
+  display: flex;
+  width: $main-wight;
+  justify-content: space-between;
+  color: $main-font-color;
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../../../public/img/logo.svg);
+}
+
+.li-nav {
+  padding: 20px;  
+  list-style-type: none;
+}
+
+.header-left-block, .header-right-block {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-theme {
+  margin-left: 12px;
+}
+
+.border-theme {
+  display: flex;
+  width: 44px;
+  height: 24px;
+  border-radius: 100px;
+  background-color: $btn-color;
+}
+
+.toggler-theme {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+
+  border-radius: 1000px;
+  background-color: rgb(244, 244, 245);
+}
+
+.svg-toggler-theme{
+  background-image: url(../../../../public/img/svg-toggler-theme.svg);
+  width: 44px;
+  height: 24px;
+  fill: antiquewhite;
+}
+
+.btn-request {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 137px;
+  height: 40px;
+  margin-left: 24px;
+  border-radius: 0.25rem;
+  background-color: $btn-color;
+}
+
+.header-drop-down {
+  position: absolute;
+  list-style-type: none;
+  background-color: rgb(46, 46, 51);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: $secondary-font-color;
+  padding: 8px 0px;
+  width: 160px;
+  margin-top: 10px;
+}
+
+.drop-down-arrow{
+  width: 12px;
+  height: 12px;
+  fill: red;
+  margin-left: 4px;
+}
+
+.drop-down-help, .drop-down-404 {
+  padding: 8px 16px 8px 16px;
+}
+
