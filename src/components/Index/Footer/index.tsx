@@ -1,4 +1,4 @@
-import "./footer.scss";
+import style from "./footer.module.scss";
 
 export const Footer = () => {
   
@@ -24,45 +24,45 @@ export const Footer = () => {
   const socialIconImg = ['./img/x.svg', './img/discord.svg', './img/facebook.svg', './img/instagram.svg', './img/linkedin.svg']
 
   const socialIcons = socialIconImg.map((img) => 
-    <li className="li-social-link">
-      <a className="a-social-link">
-      <img src={img} alt="icon" className="svg-social" />
+    <li>
+      <a>
+      <img src={img} alt="icon" className={style.svgSocial} />
       </a>
     </li>
   )
 
   const columns = columnContent.map((content) => 
-    <div className="footer-column">
-    <h6 className="h6-footer">{content.name}</h6>
-    <ul className="column-footer">
-      <li className="li-column"><a href="" className="footer-link">{content.content[0]}</a></li>
-      <li className="li-column"><a href="" className="footer-link">{content.content[1]}</a></li>
-      <li className="li-column"><a href="" className="footer-link">{content.content[2]}</a></li>
-      {content.content[3] && <li className="li-column"><a href="" className="footer-link">{content.content[3]}</a></li>}
-      {content.content[4] && <li className="li-column"><a href="" className="footer-link">{content.content[4]}</a></li>}
+    <div className={style.columnFooter}>
+    <h6 className={style.h6Footer}>{content.name}</h6>
+    <ul className={style.columnFooter}>
+      <li className={style.liColumn}><a href="" className={style.footerLink}>{content.content[0]}</a></li>
+      <li className={style.liColumn}><a href="" className={style.footerLink}>{content.content[1]}</a></li>
+      <li className={style.liColumn}><a href="" className={style.footerLink}>{content.content[2]}</a></li>
+      {content.content[3] && <li className={style.liColumn}><a href="" className={style.footerLink}>{content.content[3]}</a></li>}
+      {content.content[4] && <li className={style.liColumn}><a href="" className={style.footerLink}>{content.content[4]}</a></li>}
     </ul>
   </div>
   )
 
   return (
-    <footer className="footer">
-      <div className="footer-wrap">
-        <div className="main-footer">
-          <div className="logo">
+    <footer className={style.footer}>
+      <div className={style.footerWrap}>
+        <div className={style.mainFooter}>
+          <div className={style.logo}>
             <a href="index.html" aria-label="Cruip"></a>
           </div>
-          <div className="footer-columns-wrap">
+          <div className={style.footerColumnsWrap}>
             {columns}
           </div>
         </div>
-        <div className="footer-footer">
-          <div className="cruip-com">© Cruip.com. All rights reserved.</div>
-          <div className="middle-links">
-            <a>Terms</a>&nbsp;·&nbsp;
-            <a>Privacy Policy</a>
+        <div className={style.footerFooter}>
+          <div className={style.cruipCom}>© Cruip.com. All rights reserved.</div>
+          <div className={style.middleLinks}>
+            <a className={style.footerLinkDown}>Terms</a>&nbsp;·&nbsp;
+            <a className={style.footerLinkDown}>Privacy Policy</a>
           </div>
-          <div className="social-links-wrap">
-            <ul className="ul-social-links">
+          <div className={style.socialLinksWrap}>
+            <ul className={style.ulSocialLinks}>
               {socialIcons}
             </ul>
           </div>

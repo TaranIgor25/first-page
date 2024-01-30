@@ -1,0 +1,64 @@
+@import "../../../styles/global.scss";
+
+.navBurger{
+  display: none;
+  position: fixed;
+  background-color: rgb(29, 29, 32);
+  z-index: 300;
+  max-width: 80%;
+  width: 320px;
+  height: 100vh;
+  margin-left: -24px; 
+  color: rgb(212, 212, 216);
+}
+
+.burgerWrap {
+  padding: 24px 16px 24px;
+}
+
+.logo{
+  width: 32px;
+  height: 32px;
+  background-image: url(../../../../public/img/logo.svg);
+  margin-bottom: 16px;
+}
+
+.burgerUl{
+  list-style-type: none;
+  padding: 0;
+}
+
+.resourcesUl{
+  list-style-type: none;
+  padding: 8px;
+}
+
+.burgerLi, .resourcesLi{
+  padding: 8px 8px;
+  font-size: 14px;
+}
+
+.resourcesLi{
+  color: $secondary-font-color;
+}
+
+
+.requestBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $btn-color;
+  color: white;
+  padding: 12px 32px;
+  flex-shrink: 0;
+  height: 22px;
+  cursor: pointer;
+}
+
+.borderBottom{
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-color:  rgba(162, 162, 168, 0.2);
+  margin: 8px 0px;
+}

@@ -1,6 +1,6 @@
 @import "../../../styles/global.scss";
 
-.six-section-wrap{
+.sixSectionWrap{
   max-width: $main-wight;
   justify-content: center;
   margin: 0 auto;
@@ -10,47 +10,73 @@
   border-color: rgb(46, 46, 51);
 }
 
-.six-section-blocks {
+.sixSectionBlocks {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 3rem;
 }
 
-.reviews-block {
+.reviewsBlock {
   text-align: center;
 }
 
-.face-img-reviews{
+.faceImgReviews{
   width: 56px;
   height: 56px;
   border-radius: 9999px;
 }
 
-.face-decoration{
+.faceDecoration{
   position: absolute;
   fill: rgb(159, 122, 234);
 }
 
-.imgs-reviews{
+.imgsReviews{
   margin-bottom: 1rem;
 }
 
-.blockquote-reviews{
+.blockquoteReviews{
   font-size: 1.25rem;
   margin: 0;
 }
 
-.description-reviews {
+.descriptionReviews {
   margin-top: 0.5rem;
   font-family: $secondary-font-family;
 }
 
-.cite-reviews{
+.citeReviews{
   font-style: normal;
   color: $main-font-color;
 }
 
-.link-reviews{
+.linkReviews{
   text-decoration: none;
   color: $btn-color;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .sixSectionBlocks {
+    column-gap: 32px;
+  }
+  .sixSectionWrap{
+    max-width: 672px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .sixSectionWrap{
+    padding: 48px 0;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  .sixSectionBlocks {
+    grid-template-columns: 1fr;
+    max-width: 384px;
+    margin: 0 auto;
+  }
 }

@@ -1,4 +1,4 @@
-import "./thirdSection.scss";
+import style from "./thirdSection.module.scss";
 import Video from "./Video";
 import { videoObj } from "./videoObj";
 
@@ -28,27 +28,27 @@ export const ThirdSection = () => {
   ]
 
   const liList = liArr.map((li) => 
-    <button className="left-block-btn">
-      <img src={li.img} alt="icon" className="svg-third-section" />
+    <button className={`${style.leftBlockBtn} ${style.btnHover}`}>
+      <img src={li.img} alt="icon" className={style.svgThirdSection} />
       <span className="into-btn-span">{li.text}</span>
     </button>
   )
 
   return (
     <>
-      <section className="third-section">
-        <div className="third-section-wrap">
-          <div className="third-section-blocks">
-            <div className="text-block">
-              <h2 className="h2-third-section">Turn your ideas into reality in seconds</h2>
-              <p className="p-third-section">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+      <section className={style.thirdSection}>
+        <div className={style.thirdSectionWrap}>
+          <div className={style.ThirdSectionBlocks}>
+            <div className={style.textBlock}>
+              <h2 className={style.h2ThirdSection}>Turn your ideas into reality in seconds</h2>
+              <p className={style.pThirdSection}>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
             </div>
-            <div className="content-block">
-              <div className="content-block-wrap">
-                <div className="left-block-sort">
+            <div className={style.contentBloc}>
+              <div className={style.contentBlockWrap}>
+                <div className={style.leftBlockSort}>
                   {liList}
                 </div>
-                <div className="right-block-video">
+                <div className={style.rightBlockVideo}>
                     <Video video={videoObj[0]}></Video>
                     <Video video={videoObj[1]}></Video>
                     <Video video={videoObj[2]}></Video>

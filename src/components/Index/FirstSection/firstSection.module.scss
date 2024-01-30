@@ -1,0 +1,220 @@
+@import "../../../styles/global.scss";
+
+.firstSectionWrap {
+  @include wrapper;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.leftBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 610px;
+}
+
+.h1FirstSection {
+  margin-bottom: 16px;
+  line-height: 1.11;
+  letter-spacing: -0.04em;
+  animation: down 1s forwards;
+  opacity: 0;
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0, -20%);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.pFirstSection {
+  margin: 20px 0 20px 0;
+  animation: down 1s forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+.inputBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 448px;
+  animation: down 1s forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+
+.inputPhone {
+  width: 100%;
+  height: 22px;
+  margin-right: 8px;
+  padding: 12px 16px 12px 16px;
+  border: solid 1px rgb(82, 82, 90);
+  border-radius: 4px;
+  background-color: rgb(46, 46, 51);
+  outline: none;
+}
+
+.inputPhone:focus {
+  border: solid 1px rgb(122, 122, 122);
+}
+
+input.inputPhone::placeholder {
+  color: $secondary-font-color;
+}
+
+.checkMark {
+  width: 12px;
+  height: 12px;
+  color: rgb(79, 209, 197);
+  fill: currentColor;
+  margin-right: 8px;
+}
+
+.ulFirstSection {
+  padding: 0;
+  margin-top: 32px;
+  margin-bottom: 0;
+  list-style-type: none;
+  font-size: 18px;
+  animation: down 1s forwards;
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+
+.firstSectionLi {
+  margin-bottom: 8px;
+}
+
+.requestCodeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $btn-color;
+  color: white;
+  padding: 12px 32px;
+  flex-shrink: 0;
+  height: 22px;
+  cursor: pointer;
+}
+
+.requestCodeBtn:hover{
+  background-color: rgb(79,209,197);
+  transition-duration: .15s;
+}
+
+
+.rightBlockWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 680px;
+  width: 344px;
+  padding-left: 24px;
+  animation: up 1s forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes up {
+  0%{
+    transform: translate(0, 3%);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+
+.svgBackground {
+  opacity: 0.4;
+}
+
+.mobileImg{
+  position: absolute;
+  width: 344px;
+  height: 674px;
+}
+
+.intoMobileImg{
+  position: absolute;
+  width: 290px;
+  height: 628px;
+}
+
+.playImg {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  cursor: pointer;
+}
+
+.playImg:hover {
+  opacity: 0.8;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .h1FirstSection {
+    font-size: 64px;
+  }
+  .firstSectionWrap {
+    padding: 40px 0px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .firstSectionWrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .h1FirstSection {
+    font-size: 56px;
+    margin: 0px;
+  }
+
+  .leftBlock {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .ulFirstSection {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .inputBlock {
+    flex-wrap: wrap;
+    max-width: 384px;
+  }
+git
+  .inputPhone{
+    margin-bottom: 8px;
+    margin-right: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .requestCodeBtn{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .rightBlockWrap {
+    padding-left: 0px;
+  }
+}

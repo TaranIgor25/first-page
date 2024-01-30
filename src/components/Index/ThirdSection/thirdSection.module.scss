@@ -1,30 +1,30 @@
 @import "../../../styles/global.scss";
 
-.third-section-wrap{
+.thirdSectionWrap{
   max-width: $main-wight;
   justify-content: center;
   margin: 0 auto;
   padding: 5rem 0;
 }
 
-.text-block {
+.textBlock {
   max-width: 48rem;
   text-align: center;
   margin: 0 auto;
   padding-bottom: 4rem;
 }
 
-.h2-third-section {
+.h2ThirdSection {
   margin: 0 0 1rem 0;
   line-height: 1.18;
   letter-spacing: -0.02em;
 }
 
-.p-third-section {
+.pThirdSection {
   margin: 0px;
 }
 
-.svg-third-section{
+.svgThirdSection{
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
@@ -32,12 +32,12 @@
   fill: currentColor;
 }
 
-.video-img {
-  width: 352px;
-  height: 264px;
+.videoImg {
+  max-width: 100%;
+  height: auto;
 }
 
-.left-block-btn {
+.leftBlockBtn {
   display: flex;
   padding: 0.75rem 0.75rem;
   border: none;
@@ -47,56 +47,76 @@
   color: $main-font-color;
 }
 
-.content-block-wrap {
-  display: flex;
-  justify-content: space-between;
+.btnHover:hover {
+  background-color: rgb(64,63,69);
+  transition-duration: .15s;
+  cursor: pointer;
 }
 
-.right-block-video{
+.btnOnClick {
+  background-color: rgb(34,60,62);
+  color: rgb(79, 209, 197);
+}
+
+.contentBlockWrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+.rightBlockVideo{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
 
-.into-btn-span{
+.intoBtnSpan{
   font-weight: 500;
 }
 
-.left-block-sort {
+.leftBlockSort {
   display: flex;
   flex-direction: column;
-  padding-right: 5rem;
-  width: 100%;
+  padding-right: 64px;
 }
 
-.video-block-wrap {
+.videoBlockWrap {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.videoBlock{
+  display: flex;
+}
 
-.content-video-block{
+
+.contentVideoBlock{
   position: absolute;
   display: flex;
   flex-direction: column;
   inset: 0px;
 }
 
-.start-video-img {
+.startVideoImg {
   width: 72px;
   height: 72px;
 }
 
-.start-video {
+.startVideoImg:hover {
+  opacity: 0.72;
+  transition-duration: .15s;
+}
+
+.startVideo {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
 }
 
-.video-description{
+.videoDescription{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,12 +125,12 @@
   opacity: 0.9;
 }
 
-.video-name {
+.videoName {
   color: $secondary-font-color;
   text-decoration: none;
 }
 
-.vide-time{
+.videTime{
   line-height: 1.5;
   padding: 0.25rem 0.75rem;
   font-weight: 500;
@@ -119,5 +139,53 @@
   background-color: rgba(49, 151, 149,0.25);
   color: rgb(79, 209, 197);
   align-self: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .contentBlockWrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .leftBlockSort {
+    display: flex;
+    flex-direction: row;
+    padding-right: 0px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .leftBlockBtn {
+    margin: 4px;
+  }
+
+  .rightBlockVideo{
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .h2ThirdSection{
+     font-size: 42px;
+  }
+
+  .rightBlockVideo{
+    grid-template-columns: 1fr;
+  }
+
+  .rightBlockVideo{
+    max-width: 384px;
+  }
+
+  .thirdSectionWrap{
+    padding: 48px 0;
+  }
+
+  .textBlock {
+    padding-bottom: 48px;
+  }
 }
 

@@ -1,5 +1,4 @@
-import "./secondarySection.scss";
-import "../../../styles/global.scss";
+import style from "./secondarySection.module.scss";
 
 export const SecondarySection = () => {
 
@@ -7,38 +6,38 @@ export const SecondarySection = () => {
     './img/carousel-item-04.jpg', './img/carousel-item-05.jpg']
 
   const swipes = imgsArr.map((img) => 
-    <div className="swipe">
-    <img src={img} alt="" className="slide-img" />
-    <div className="btn-wrap">
-      <div className="learn-more-btn">
-        <a className="learn-more-link">Learn more</a>
+    <div className={style.swipe}>
+    <img src={img} alt="" className={style.slideImg} />
+    <div className={style.btnWrap}>
+      <div className={style.learnMoreBtn}>
+        <a>Learn more</a>
       </div>
-      <div className="creative-services">
-        <a className="creative-services-link">Creative Services</a>
+      <div className={style.creativeServices}>
+        <a className={style.creativeServicesLink}>Creative Services</a>
       </div>
     </div>
   </div>
   )
 
   return (
-  <section className="secondary-section">
-    <div className="secondary-section-wrap">
-      <div className="secondary-section-tittle">
-        <h2 className="h2-secondary-section">From rough design files, to powerful products</h2>
-        <p className="p-secondary-section">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+  <section className={style.secondarySection}>
+    <div className={style.secondarySectionWrap}>
+      <div className={style.secondarySectionTittle}>
+        <h2 className={style.h2SecondarySection}>From rough design files, to powerful products</h2>
+        <p className={style.pSecondarySection}>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
       </div>
-    <div className="swiper-section-wrap">
+    <div className={style.swiperSectionWrap}>
       {swipes}
     </div>
-    <div className="slider-control-section">
-      <div className="slider-control-wrap">
-        <div className="slider-btn-left">
-          <span className="left-btn"></span>
-          <img src="./img/arrow.svg" alt="arrow" className="arrow"/>
+    <div className={style.sliderControlSection}>
+      <div className={style.sliderControlWrap}>
+        <div className={style.sliderBtnLeft}>
+          <span className={style.leftBtn}></span>
+          <img src="./img/arrow.svg" alt="arrow" className={style.arrow}/>
         </div>
-        <div className="slider-btn-right">
-          <span className="right-btn"></span>
-          <img src="./img/arrow2.svg" alt="arrow" className="arrow"/>
+        <div className={style.sliderBtnRight}>
+          <span className={style.rightBtn}></span>
+          <img src="./img/arrow2.svg" alt="arrow" className={style.arrow}/>
         </div>
       </div>
     </div>

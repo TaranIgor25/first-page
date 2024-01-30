@@ -1,0 +1,194 @@
+@import "../../../styles/global.scss";
+
+.headerWrapper{
+  display: flex;
+  justify-content: center;
+  height: 80px;
+}
+
+.headerContent {
+  display: flex;
+  width: $main-wight;
+  justify-content: space-between;
+  color: $main-font-color;
+}
+
+.navUl {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  color: rgb(212, 212, 216,);
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../../../public/img/logo.svg);
+  cursor: pointer;
+}
+
+.liNav {
+  padding: 20px;  
+  list-style-type: none;
+  transition-duration: .15s;
+}
+
+.liNav:hover {
+  color: rgb(245, 245, 245);
+  cursor: pointer;
+}
+
+.liDrop:hover .headerDropDown {
+  opacity: 1;
+  transition-duration: 0.15s;
+  pointer-events: all;
+  margin-top: 10px;
+}
+
+
+.headerLeftBlock, .headerRightBlock {
+  display: flex;
+  align-items: center;
+}
+
+.toggleTheme {
+  margin-left: 12px;
+}
+
+.borderTheme {
+  display: flex;
+  width: 44px;
+  height: 24px;
+  border-radius: 100px;
+  background-color: $btn-color;
+}
+
+.togglerTheme {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  left: 20px;
+  border-radius: 1000px;
+  background-color: rgb(53,53,59);
+  transition-duration: .15s;
+}
+
+.whiteTheme{
+  left: 0px;
+  background-color: rgb(255, 255, 255);
+}
+
+.svgTogglerTheme{
+  position: absolute;
+  background-image: url(../../../../public/img/svg-toggler-theme.svg);
+  width: 44px;
+  height: 24px;
+  fill: antiquewhite;
+}
+
+.btnRequest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 137px;
+  height: 40px;
+  margin-left: 24px;
+  border-radius: 0.25rem;
+  background-color: $btn-color;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btnRequest:hover {
+  background-color: rgb(79,209,197);
+  transition-duration: .15s;
+}
+
+.headerDropDown {
+  position: absolute;
+  list-style-type: none;
+  background-color: rgb(46, 46, 51);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: $secondary-font-color;
+  padding: 8px 0px;
+  width: 160px;
+  margin-top: 0px;
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+.dropDownArrow{
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+}
+
+.dropDownHelp, .dropDown404 {
+  padding: 8px 16px 8px 16px;
+}
+
+.dropDownHelp:hover, .dropDown404:hover {
+  color: rgb(65,213,201);
+}
+
+.burgerBtn{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .btnRequest {
+    display: none;
+  }
+  .headerNav{
+    display: none;
+  }
+  .burgerBtn{
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 20px;
+    margin-left: 24px;
+    transition: all .15s;
+  }
+
+  .burgerBtn:before,
+  .burgerBtn:after {
+    content: "";
+    background-color: rgb(212, 212, 216);
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all .15s;
+  }
+  .burgerBtn:before {
+    top: 0;
+  }
+  .burgerBtn::after {
+    bottom: 0;
+  }
+  .burgerSpan{
+    background-color: rgb(212, 212, 216);
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 9px;
+    transition: all .15s;
+  }
+
+  .burgerBtn:hover::before{
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .burgerBtn:hover::after{
+    bottom: 9px;
+    transform: rotate(-45deg);
+  }
+  .burgerBtn:hover .burgerSpan{
+    transform: scale(0);
+  }
+}

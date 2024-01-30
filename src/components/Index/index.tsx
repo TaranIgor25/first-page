@@ -11,11 +11,13 @@ import Footer from "./Footer";
 
 import "../../styles/normalize.css";
 import '../../styles/global.scss';
+import FixedSection from "./FixedSection";
 
 export const Index = () => {
 
   return (
     <>
+      <FixedSection/>
       <div className="body-wrap">
         <FirstSection> 
           <Header/>

@@ -1,40 +1,48 @@
-import './header.scss'
+import BurgerMenu from './BurgerMenu';
+
+import { useEffect, useState } from 'react';
+import style from './header.module.scss'
 
 export const Header = () => {
+
   return (
     <header>
-      <div className="right-top-background"></div>
-      <div className='header-wrapper'>
-        <div className='header-content'>
-          <div className='header-left-block'>
-            <div className='logo'>
+      <div className={style.rightTopBackground}></div>
+      <div className={style.headerWrapper}>
+        <div className={style.headerContent}>
+          <div className={style.headerLeftBlock}>
+            <div className={style.logo}>
             </div>
-            <nav className='header-nav'>
-              <ul className='nav-ul'>
-                <li className='li-nav'>About</li>
-                <li className='li-nav'>Blog</li>
-                <li className='li-nav'>Testimonials</li>
-                <li className='li-nav'>Resourses
-                  <img className="drop-down-arrow" src='./img/drop-down-arrow.svg'></img>
-                  <ul className='header-drop-down'>
-                    <li className='drop-down-help'>Help center</li>
-                    <li className='drop-down-404'>404</li>
+            <nav className={style.headerNav}>
+              <ul className={style.navUl}>
+                <li className={style.liNav}>About</li>
+                <li className={style.liNav}>Blog</li>
+                <li className={style.liNav}>Testimonials</li>
+                <li className={`${style.liNav} ${style.liDrop}`}>Resourses
+                  <img className={style.dropDownArrow} src='./img/drop-down-arrow.svg'></img>
+                  <ul className={style.headerDropDown}>
+                    <li className={style.dropDownHelp}>Help center</li>
+                    <li className={style.dropDown404}>404</li>
                   </ul>
                 </li>
               </ul>
             </nav>
           </div>
-          <div className='header-right-block'>
-            <div className='toggle-theme'>
-              <div className='border-theme'>
-                <div className="svg-toggler-theme"></div>
-                <div className='toggler-theme'></div>
+          <div className={style.headerRightBlock}>
+            <div className={style.toggleTheme}>
+              <div className={style.borderTheme}>
+                <div className={style.svgTogglerTheme}></div>
+                <div className={style.togglerTheme}></div>
               </div>
             </div>
-            <div className='btn-request'>
-              <a className='requests-link'>Request code</a>
+            <div className={style.btnRequest}>
+              <a className={style.requestLink}>Request code</a>
+            </div>
+            <div className={style.burgerBtn}>
+              <span className={style.burgerSpan}></span>
             </div>
           </div>
+          <BurgerMenu></BurgerMenu>
         </div>
       </div>
     </header>
