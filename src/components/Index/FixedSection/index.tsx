@@ -3,8 +3,10 @@ import { ComputerIcon } from "./ComputerIcon";
 import { ExitIcon } from "./ExitIcon";
 
 import style from "./fixedSection.module.scss";
+import { useState } from 'react';
 
 export const FixedSection = () => {
+  const [visibleSection, setVisibleSection] = useState(true);
 
   const dropDownArr = ['Home', 'About', 'Blog', 'Blog Post', 'Testimonials', 'Help center', '404', 'Contact'];
 
@@ -16,7 +18,8 @@ export const FixedSection = () => {
 
   return (
     <>
-      <section className={style.fixSection}>
+      {visibleSection &&
+        <section className={style.fixSection}>
         <div className={style.fixWrap}>
           <div className={style.logoBlock}>
             <a href="" className={style.linkCruip}>
@@ -46,13 +49,13 @@ export const FixedSection = () => {
             <button className={style.buyNow}>
               <span>Buy Now - $49</span>
             </button>
-            <a className={style.closeBtn}>
+            <a onClick={() => setVisibleSection(false)} className={style.closeBtn}>
               <ExitIcon/>
             </a>
           </div>
         </div>
         <div className={style.linearDownload}></div>
-      </section>
+      </section>}
     </>
   );
 };

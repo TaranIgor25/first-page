@@ -73,11 +73,7 @@
   border-radius: 1000px;
   background-color: rgb(53,53,59);
   transition-duration: .15s;
-}
-
-.whiteTheme{
-  left: 0px;
-  background-color: $btn-font-color;
+  cursor: pointer;
 }
 
 .svgTogglerTheme{
@@ -85,6 +81,7 @@
   background-image: url(../../../../public/img/svg-toggler-theme.svg);
   width: 44px;
   height: 24px;
+  cursor: pointer;
 }
 
 .btnRequest {

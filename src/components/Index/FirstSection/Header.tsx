@@ -1,8 +1,29 @@
+import { useState } from 'react';
 import BurgerMenu from './BurgerMenu';
 
 import style from './header.module.scss'
 
 export const Header = () => {
+  const [toggleTheme, setToggleTheme] = useState(false);
+
+  const whiteTheme = {
+    left: '0px',
+    backgroundColor: 'rgb(255,255,255)'
+  } 
+
+  const darkTheme = {
+    left: '20px',
+  } 
+
+  const [themeStyle, setThemeStyle] : any = useState(darkTheme);
+
+  const setTheme = () => {
+    setToggleTheme(!toggleTheme);
+    if (toggleTheme === true) {
+      setThemeStyle(whiteTheme)
+    }
+    else {setThemeStyle(darkTheme)}
+  }
 
   return (
     <header>
@@ -28,10 +49,10 @@ export const Header = () => {
             </nav>
           </div>
           <div className={style.headerRightBlock}>
-            <div className={style.toggleTheme}>
+            <div onClick={setTheme} className={style.toggleTheme}>
               <div className={style.borderTheme}>
                 <div className={style.svgTogglerTheme}></div>
-                <div className={style.togglerTheme}></div>
+                <div className={style.togglerTheme} style={themeStyle}></div>
               </div>
             </div>
             <div className={style.btnRequest}>

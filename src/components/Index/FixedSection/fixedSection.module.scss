@@ -97,8 +97,13 @@
 }
 
 .dropDown{
-  display: none;
+  visibility: hidden;
   position: absolute;
+  cursor: pointer;
+}
+
+.pagesBtn:hover  .dropDown {
+  visibility: visible;
 }
 
 .dropDownUl{
@@ -114,6 +119,10 @@
   border-bottom: 1px solid;
   border-color: rgb(229,231,235);
   list-style-type: none;
+}
+
+.dropDownLi:hover{
+  color: rgb(99,102,241);
 }
 
 .buyNow{

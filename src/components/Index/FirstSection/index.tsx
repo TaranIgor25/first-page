@@ -2,7 +2,9 @@ import ModalVideo from "../ModalVideo";
 
 import style from "./firstSection.module.scss";
 
+import { useState } from 'react';
 export const FirstSection = ({children}: any)  => {
+  const [openModal, setOpenModal] = useState(false);
 
   const listContent = [
     'Lorem ipsum is placeholder text commonly.',
@@ -19,7 +21,7 @@ export const FirstSection = ({children}: any)  => {
 
   return (
     <section className={style.firstSection}>
-      <ModalVideo/>
+      <ModalVideo status={openModal}/>
       {children}
       <div className={style.firstSectionWrap}>
         <div className={style.leftBlock}>
@@ -38,7 +40,7 @@ export const FirstSection = ({children}: any)  => {
             <img className={style.svgBackground} src="./img/background-rays.svg" alt="rays" />
             <img src='./img/mockup-image-01.jpg' className={style.intoMobileImg}></img>
             <img src="./img/iphone-mockup.png" className={style.mobileImg}></img>
-            <img src="./img/play-button.svg" className={style.playImg}></img>
+            <img onClick={() => setOpenModal(true)} src="./img/play-button.svg" className={style.playImg}></img>
           </div>
         </div>
       </div>
