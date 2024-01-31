@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: row;
   padding-left: 20px;
-  color: rgb(212, 212, 216,);
+  color: $third-font-color;
 }
 
 .logo {
@@ -34,7 +34,7 @@
 }
 
 .liNav:hover {
-  color: rgb(245, 245, 245);
+  color: $btn-font-color;
   cursor: pointer;
 }
 
@@ -76,7 +76,7 @@
 
 .whiteTheme{
   left: 0px;
-  background-color: rgb(255, 255, 255);
+  background-color: $btn-font-color;
 }
 
 .svgTogglerTheme{
@@ -84,7 +84,6 @@
   background-image: url(../../../../public/img/svg-toggler-theme.svg);
   width: 44px;
   height: 24px;
-  fill: antiquewhite;
 }
 
 .btnRequest {
@@ -101,14 +100,14 @@
 }
 
 .btnRequest:hover {
-  background-color: rgb(79,209,197);
+  background-color: $hover-btn-color;
   transition-duration: .15s;
 }
 
 .headerDropDown {
   position: absolute;
   list-style-type: none;
-  background-color: rgb(46, 46, 51);
+  background-color: $second-background-color;
   border-radius: 0.25rem;
   font-size: 0.875rem;
   color: $secondary-font-color;
@@ -157,7 +156,7 @@
   .burgerBtn:before,
   .burgerBtn:after {
     content: "";
-    background-color: rgb(212, 212, 216);
+    background-color: $third-font-color;
     position: absolute;
     width: 100%;
     height: 2px;
@@ -171,7 +170,7 @@
     bottom: 0;
   }
   .burgerSpan{
-    background-color: rgb(212, 212, 216);
+    background-color: $third-font-color;
     position: absolute;
     width: 100%;
     height: 2px;

@@ -1,3 +1,5 @@
+@import "../../../styles/global.scss";
+
 .fixSection{
   position: relative;
   height: 64px;
@@ -98,7 +100,7 @@
 .dropDownUl{
   padding: 4px 12px;
   margin-top: 4px;
-  background-color: rgb(245, 245, 245);
+  background-color: $main-font-color;
 }
 
 .dropDownLi{

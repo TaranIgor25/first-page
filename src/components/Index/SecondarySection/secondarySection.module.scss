@@ -3,8 +3,9 @@
 .secondarySection{
   border-top: solid 1px;
   border-bottom: solid 1px;
-  border-color: rgb(46, 46, 51);
-  margin: 0 auto;
+  border-color: $second-background-color;
+  @include wrapper;
+  padding: 0px;
 }
 
 .secondarySectionWrap {
@@ -59,11 +60,11 @@
   border-radius: 0.25rem;
   padding: 0.5rem 1rem 0.5rem 1rem;
   background-color: $btn-color;
-  color: white;
+  color: $main-font-color;
 }
 
 .learnMoreBtn:hover {
-  background-color: rgb(79,209,197);
+  background-color: $hover-btn-color;
   transition-duration: .15s;
   cursor: pointer;
 }
@@ -76,11 +77,11 @@
   padding: 0.5rem 0.75rem;
   margin: 1.5rem;
   border-radius: 9999px;
-  background-color: rgba(29, 29, 32, 0.5);
+  background-color: rgba($main-background-color, 0.5);
 }
 
 .creativeServices:hover{
-  background-color: rgba(29, 29, 32, 1);
+  background-color: rgba($main-background-color, 1);
   transition-duration: .15s;
   cursor: pointer;
 }
@@ -105,7 +106,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(46, 46, 51);
+  background-color: $second-background-color;
   width: 56px;
   height: 56px;
 }
@@ -138,7 +139,7 @@
 
 @media screen and (max-width: 768px) {
   .h2SecondarySection{
-    font-size: 42px;
+    font-size: $font-size-media;
   }
   .secondarySectionWrap {
     padding: 48px 0px;

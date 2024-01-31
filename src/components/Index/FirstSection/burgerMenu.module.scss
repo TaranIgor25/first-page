@@ -3,13 +3,13 @@
 .navBurger{
   display: none;
   position: fixed;
-  background-color: rgb(29, 29, 32);
+  background-color: $main-background-color;
   z-index: 300;
   max-width: 80%;
   width: 320px;
   height: 100vh;
   margin-left: -24px; 
-  color: rgb(212, 212, 216);
+  color: $third-font-color;
 }
 
 .burgerWrap {
@@ -42,14 +42,13 @@
   color: $secondary-font-color;
 }
 
-
 .requestBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
   background-color: $btn-color;
-  color: white;
+  color: $btn-font-color;
   padding: 12px 32px;
   flex-shrink: 0;
   height: 22px;
@@ -59,6 +58,6 @@
 .borderBottom{
   border-bottom: 1px solid;
   border-top: 1px solid;
-  border-color:  rgba(162, 162, 168, 0.2);
+  border-color: $border-color;
   margin: 8px 0px;
 }

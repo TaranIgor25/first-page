@@ -1,10 +1,8 @@
 @import "../../../styles/global.scss";
 
 .thirdSectionWrap{
-  max-width: $main-wight;
+  @include wrapper;
   justify-content: center;
-  margin: 0 auto;
-  padding: 5rem 0;
 }
 
 .textBlock {
@@ -43,7 +41,7 @@
   border: none;
   margin-bottom: 0.5rem;
   border-radius: 0.25rem;
-  background-color: rgb(46, 46, 51);
+  background-color: $second-background-color;
   color: $main-font-color;
 }
 
@@ -55,7 +53,7 @@
 
 .btnOnClick {
   background-color: rgb(34,60,62);
-  color: rgb(79, 209, 197);
+  color: $hover-btn-color;
 }
 
 .contentBlockWrap {
@@ -137,7 +135,7 @@
   font-size: 0.75rem;
   border-radius: 9999px;
   background-color: rgba(49, 151, 149,0.25);
-  color: rgb(79, 209, 197);
+  color: $hover-btn-color;
   align-self: center;
 }
 
@@ -169,7 +167,7 @@
 
 @media screen and (max-width: 768px) {
   .h2ThirdSection{
-     font-size: 42px;
+     font-size: $font-size-media;
   }
 
   .rightBlockVideo{

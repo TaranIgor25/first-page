@@ -56,7 +56,7 @@
   padding: 12px 16px 12px 16px;
   border: solid 1px rgb(82, 82, 90);
   border-radius: 4px;
-  background-color: rgb(46, 46, 51);
+  background-color: $second-background-color;
   outline: none;
 }
 
@@ -71,7 +71,7 @@ input.inputPhone::placeholder {
 .checkMark {
   width: 12px;
   height: 12px;
-  color: rgb(79, 209, 197);
+  color: $hover-btn-color;
   fill: currentColor;
   margin-right: 8px;
 }
@@ -97,7 +97,7 @@ input.inputPhone::placeholder {
   align-items: center;
   border-radius: 4px;
   background-color: $btn-color;
-  color: white;
+  color: $btn-font-color;
   padding: 12px 32px;
   flex-shrink: 0;
   height: 22px;
@@ -105,7 +105,7 @@ input.inputPhone::placeholder {
 }
 
 .requestCodeBtn:hover{
-  background-color: rgb(79,209,197);
+  background-color: $hover-btn-color;
   transition-duration: .15s;
 }
 
@@ -131,7 +131,6 @@ input.inputPhone::placeholder {
     opacity: 1;
   }
 }
-
 
 .svgBackground {
   opacity: 0.4;
@@ -165,9 +164,6 @@ input.inputPhone::placeholder {
   .h1FirstSection {
     font-size: 64px;
   }
-  .firstSectionWrap {
-    padding: 40px 0px;
-  }
 }
 
 
@@ -186,7 +182,7 @@ input.inputPhone::placeholder {
   .leftBlock {
     width: 100%;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .ulFirstSection {
@@ -199,7 +195,7 @@ input.inputPhone::placeholder {
     flex-wrap: wrap;
     max-width: 384px;
   }
-git
+
   .inputPhone{
     margin-bottom: 8px;
     margin-right: 0px;
@@ -216,5 +212,9 @@ git
 
   .rightBlockWrap {
     padding-left: 0px;
+  }
+
+  .firstSectionWrap{
+    padding-bottom: 40px;
   }
 }

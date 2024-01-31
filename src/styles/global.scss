@@ -2,6 +2,14 @@ $main-wight: 1104px;
 
 $main-font-color: rgb(244, 244, 245);
 $secondary-font-color: rgb(162, 162, 168);
+$third-font-color: rgb(212, 212, 216);
+$main-background-color: rgb(29, 29, 32);
+$second-background-color: rgb(46, 46, 51);
+$btn-color: rgb(58, 186, 180);
+$btn-font-color: $main-font-color;
+$border-color: rgba(162, 162, 168, 0.2);
+
+$hover-btn-color: rgb(79, 209, 197);
 
 $main-font-family: "Inter", sans-serif;
 $secondary-font-family: "Red Hat Display", sans-serif;
@@ -10,11 +18,10 @@ $font-size-h1: 88px;
 $font-size-h2: 56px;
 $font-size-p: 20px;
 $font-size-main: 16px;
+$font-size-media: 42px;
 
 $main-letter-spacing: -0.01em;
 
-$main-background-color: rgb(29, 29, 32);
-$btn-color: rgb(58, 186, 180);
 $main-wight: 1104px;
 
 body {
