@@ -1,8 +1,7 @@
 import style from '../ModalVideo/modalVideo.module.scss';
 
 export const ModalVideo = () => (
-  <>
-    <div className={style.darkening}></div>
+  <section className={style.modalSection}>
     <div className={style.modal}>
       <div className={style.modalWrap}>
         <div className={style.videoWrap}>
@@ -12,7 +11,7 @@ export const ModalVideo = () => (
         </div>
       </div>
     </div>
-  </>
+  </section>
 );
 
 export default ModalVideo;

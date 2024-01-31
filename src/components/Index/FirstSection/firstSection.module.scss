@@ -1,4 +1,6 @@
-@import "../../../styles/global.scss";
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/animation.scss";
 
 .firstSectionWrap {
   @include wrapper;
@@ -20,16 +22,6 @@
   letter-spacing: -0.04em;
   animation: down 1s forwards;
   opacity: 0;
-}
-
-@keyframes down {
-  0% {
-    transform: translate(0, -20%);
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
 }
 
 .pFirstSection {
@@ -109,7 +101,6 @@ input.inputPhone::placeholder {
   transition-duration: .15s;
 }
 
-
 .rightBlockWrap {
   display: flex;
   justify-content: center;
@@ -120,16 +111,6 @@ input.inputPhone::placeholder {
   animation: up 1s forwards;
   animation-delay: 0.5s;
   opacity: 0;
-}
-
-@keyframes up {
-  0%{
-    transform: translate(0, 3%);
-  }
-  100%{
-    transform: translate(0, 0);
-    opacity: 1;
-  }
 }
 
 .svgBackground {
@@ -159,19 +140,18 @@ input.inputPhone::placeholder {
   opacity: 0.8;
 }
 
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-media) {
   .h1FirstSection {
     font-size: 64px;
   }
 }
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile-media) {
   .firstSectionWrap {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 40px;
   }
 
   .h1FirstSection {
@@ -188,9 +168,7 @@ input.inputPhone::placeholder {
   .ulFirstSection {
     text-align: left;
   }
-}
 
-@media screen and (max-width: 768px) {
   .inputBlock {
     flex-wrap: wrap;
     max-width: 384px;
@@ -212,9 +190,5 @@ input.inputPhone::placeholder {
 
   .rightBlockWrap {
     padding-left: 0px;
-  }
-
-  .firstSectionWrap{
-    padding-bottom: 40px;
   }
 }

@@ -1,4 +1,5 @@
-@import "../../../styles/global.scss";
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .fourSectionWrap {
   @include wrapper;
@@ -98,15 +99,13 @@
   background-image: url(../../../../public/img/mockup-image-04.jpg);
 }
 
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-media) {
   .fourSectionMain{
     gap: 24px;
   }
-
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile-media) {
   .h2FourSection{
     font-size: $font-size-media;
   }

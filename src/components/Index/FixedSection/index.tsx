@@ -1,16 +1,15 @@
-import { useState } from "react";
+import { TabletIcon } from './TabletIcon'
+import { ComputerIcon } from "./ComputerIcon";
+import { ExitIcon } from "./ExitIcon";
+
 import style from "./fixedSection.module.scss";
-import Tablet from './tablet&mobile'
-import Computer from "./computer";
-import Exit from "./closeSection";
 
 export const FixedSection = () => {
-  const [dropDown, setDropDown] : any = useState();
 
   const dropDownArr = ['Home', 'About', 'Blog', 'Blog Post', 'Testimonials', 'Help center', '404', 'Contact'];
 
-  const dropDownList = dropDownArr.map((page) => 
-    <li className={style.dropDownLi}>
+  const dropDownListRender = dropDownArr.map((page, i) => 
+    <li key={i} className={style.dropDownLi}>
       <a>{page}</a>
     </li>
   )
@@ -26,29 +25,29 @@ export const FixedSection = () => {
           </div>
           <div className={style.centerBlock}>
             <div className={style.computerBtn}>
-              <Computer></Computer>
+              <ComputerIcon/>
             </div>
             <div className={style.tabletBtn}>
-              <Tablet></Tablet>
+              <TabletIcon/>
             </div>
           </div>
           <div className={style.rightBlock}>
             <div className={style.pagesBtn}>
-              <div onClick={setDropDown} className={style.pagesBtnWrap}>
+              <div className={style.pagesBtnWrap}>
                 <span>Home</span>
                 <img src="./img/drop-down-arrow.svg" alt="arrow" className={style.arrowDropDown} />
               </div>
-              {dropDown && <div className={style.dropDown}>
+              <div className={style.dropDown}>
                 <ul className={style.dropDownUl}>
-                  {dropDownList}
+                  {dropDownListRender}
                 </ul>
-              </div>}
+              </div>
             </div>
             <button className={style.buyNow}>
               <span>Buy Now - $49</span>
             </button>
             <a className={style.closeBtn}>
-              <Exit></Exit>
+              <ExitIcon/>
             </a>
           </div>
         </div>

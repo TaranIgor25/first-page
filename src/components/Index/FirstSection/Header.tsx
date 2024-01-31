@@ -1,6 +1,5 @@
 import BurgerMenu from './BurgerMenu';
 
-import { useEffect, useState } from 'react';
 import style from './header.module.scss'
 
 export const Header = () => {
@@ -42,7 +41,7 @@ export const Header = () => {
               <span className={style.burgerSpan}></span>
             </div>
           </div>
-          <BurgerMenu></BurgerMenu>
+          <BurgerMenu/>
         </div>
       </div>
     </header>

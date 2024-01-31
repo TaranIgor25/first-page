@@ -1,7 +1,8 @@
 import ModalVideo from "../ModalVideo";
+
 import style from "./firstSection.module.scss";
 
-export const FirstSection = (props : any) => {
+export const FirstSection = ({children}: any)  => {
 
   const listContent = [
     'Lorem ipsum is placeholder text commonly.',
@@ -9,8 +10,8 @@ export const FirstSection = (props : any) => {
     'Lorem ipsum is placeholder text commonly.'
   ];
 
-  const listItem = listContent.map((content) => 
-    <li className={style.firstSectionLi}>
+  const listItemRender = listContent.map((content, i) => 
+    <li key={i} className={style.firstSectionLi}>
       <img src="./img/check-mark.svg" alt="check mark" className={style.checkMark} />
       <span>{content}</span>
     </li> 
@@ -18,18 +19,18 @@ export const FirstSection = (props : any) => {
 
   return (
     <section className={style.firstSection}>
-      <ModalVideo></ModalVideo>
-      {props.children}
+      <ModalVideo/>
+      {children}
       <div className={style.firstSectionWrap}>
         <div className={style.leftBlock}>
           <h1 className={style.h1FirstSection}>Your website, reimagined</h1>
           <p className={style.pFirstSection}>Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
           <div className={style.inputBlock}>
-            <input type="phone" placeholder="Phone number" className={style.inputPhone} />
+            <input id="1" name="phone number" type="phone" placeholder="Phone number" className={style.inputPhone} />
             <div className={style.requestCodeBtn}>Request code</div>
           </div>
           <ul className={style.ulFirstSection}>
-            {listItem}
+            {listItemRender}
           </ul>
         </div>
         <div className={style.rightBlock}>

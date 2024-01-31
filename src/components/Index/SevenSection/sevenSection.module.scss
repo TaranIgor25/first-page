@@ -1,4 +1,6 @@
-@import "../../../styles/global.scss";
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/animation.scss";
 
 .sevenSectionWrap {
   @include wrapper;
@@ -182,17 +184,9 @@ input.inputPhone::placeholder {
 }
 
 
-@keyframes rightRun {
-  0%{
-    transform: translate(0, -10%);
-  }
-  100%{
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
 
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: $tablet-media) {
   .sevenSectionMain{
     grid-template-columns: 1fr 1fr;
     max-width: 576px;
@@ -218,7 +212,7 @@ input.inputPhone::placeholder {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $tablet-media) {
   .h2SevenSection {
     font-size: $font-size-media;
   }
@@ -242,7 +236,7 @@ input.inputPhone::placeholder {
 }
 
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: $media-640) {
   .sevenSectionMain{
     grid-template-columns: 1fr;
     max-width: 320px;
