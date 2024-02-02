@@ -4,7 +4,7 @@ import BurgerMenu from './BurgerMenu';
 import style from './header.module.scss'
 
 export const Header = () => {
-  const [toggleTheme, setToggleTheme] = useState(false);
+  const [toggleTheme, setToggleTheme] = useState(true);
 
   const whiteTheme = {
     left: '0px',
