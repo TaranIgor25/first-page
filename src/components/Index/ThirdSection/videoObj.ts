@@ -88,3 +88,37 @@ export const videoObj: IVideoBlock [] =
   },
 ]
 
+export const startVideoObj: IVideoBlock [] = 
+[    
+  {
+    name: 'Using index pages',
+    time: '2 Min',
+    category: {
+      firstCategory: '1',
+    }
+  },
+  {
+    name: 'Working with content',
+    time: '4 Min',
+    category: {
+      firstCategory: '1',
+      secondCategory: '2',
+    }
+  },
+  {
+    name: 'Using cover pages',
+    time: '7 Min',
+    category: {
+      firstCategory: '1',
+      secondCategory: '3',
+    }
+  },
+  {
+    name: 'Intro to the style model',
+    time: '9 Min',
+    category: {
+      firstCategory: '1',
+      secondCategory: '4',
+    }
+  },
+]

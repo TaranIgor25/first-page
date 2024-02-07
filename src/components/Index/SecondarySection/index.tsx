@@ -57,21 +57,12 @@ export const SecondarySection = () => {
 
   const swipesRender = infinitySwipe.map((swipe: any, iSwipe: any) => (
     <div key={iSwipe} className={style.swipe}>
-      {activeClass === iSwipe ? (
-        <img
-          src={swipe.imgSwipe}
-          alt=""
-          className={style.slideImg}
-          style={{ opacity: 1 }}
-        />
-      ) : (
-        <img
-          src={swipe.imgSwipe}
-          alt=""
-          className={style.slideImg}
-          style={{ opacity: 0.32 }}
-        />
-      )}
+      <img
+        src={swipe.imgSwipe}
+        alt=""
+        className={style.slideImg}
+        style={activeClass === iSwipe ? { opacity: 1 } : { opacity: 0.32 }}
+      />
       {activeClass === iSwipe && (
         <div className={style.btnWrap}>
           <div className={style.learnMoreBtn}>
@@ -111,10 +102,7 @@ export const SecondarySection = () => {
         </div>
         <div className={style.sliderControlSection}>
           <div className={style.sliderControlWrap}>
-            <div
-              onClick={leftSwipe}
-              className={style.sliderBtnLeft}
-            >
+            <div onClick={leftSwipe} className={style.sliderBtnLeft}>
               <span className={style.leftBtn}></span>
               <img src="./img/arrow.svg" alt="arrow" className={style.arrow} />
             </div>

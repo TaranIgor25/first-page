@@ -1,6 +1,7 @@
+import { useState } from "react";
 import style from "./thirdSection.module.scss";
 import Video from "./Video";
-import { videoObj } from "./videoObj";
+import { videoObj, startVideoObj } from "./videoObj";
 
 export const ThirdSection = () => {
   const liArr = [
@@ -26,17 +27,38 @@ export const ThirdSection = () => {
     },
   ];
 
+  const [renderObj, setRenderObj] = useState(startVideoObj);
+  const [highlightBtn, setHighlightBtn] = useState<number>(0);
+
+  const reRenderObj = (btnNumber: number) => {
+    const newObjArr: any = [];
+    videoObj.map((el) => {
+      if (
+        el.category.firstCategory === `${btnNumber + 1}` ||
+        el.category.secondCategory === `${btnNumber + 1}`
+      ) {
+        newObjArr.push(el);
+        setRenderObj(newObjArr);
+      }
+    });
+    setHighlightBtn(btnNumber);
+  };
+
+  const videoRender = renderObj.map((video, i) => (
+    <Video key={i} video={renderObj[i]}></Video>
+  ));
+
   const liListRender = liArr.map((li, i) => (
-    <button key={i} className={`${style.leftBlockBtn} ${style.btnHover}`}>
+    <button
+      onClick={() => reRenderObj(i)}
+      key={i}
+      className={style.leftBlockBtn + ' ' + (highlightBtn === i ? (style.btnOnClick) : (style.btnHover)) }
+      //style.leftBlockBtn + ' ' + ( highlightBtn === i && style.btnOnClick)
+    >
       <img src={li.img} alt="icon" className={style.svgThirdSection} />
       <span className={style.intoBtnSpan}>{li.text}</span>
     </button>
   ));
-
-
-  const videoRender = videoObj.map((video, i) => 
-    <Video key={i} video={videoObj[i]}></Video>
-  )
 
   return (
     <>
@@ -56,9 +78,7 @@ export const ThirdSection = () => {
             <div className={style.contentBloc}>
               <div className={style.contentBlockWrap}>
                 <div className={style.leftBlockSort}>{liListRender}</div>
-                <div className={style.rightBlockVideo}>
-                  {videoRender}
-                </div>
+                <div className={style.rightBlockVideo}>{videoRender}</div>
               </div>
             </div>
           </div>

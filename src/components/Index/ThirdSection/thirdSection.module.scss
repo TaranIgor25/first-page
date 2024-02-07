@@ -38,7 +38,7 @@
 
 .leftBlockBtn {
   display: flex;
-  padding: 0.75rem 0.75rem;
+  padding: 10px 12px;
   border: none;
   margin-bottom: 0.5rem;
   border-radius: 0.25rem;
@@ -46,7 +46,7 @@
   color: $main-font-color;
 }
 
-.btnHover:hover {
+.leftBlockBtn:hover {
   background-color: rgb(64,63,69);
   transition-duration: .15s;
   cursor: pointer;
@@ -55,6 +55,10 @@
 .btnOnClick {
   background-color: rgb(34,60,62);
   color: $hover-btn-color;
+}
+
+.btnOnClick:hover {
+  background-color: rgb(46, 101, 105);
 }
 
 .contentBlockWrap {
