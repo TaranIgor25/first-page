@@ -13,10 +13,15 @@
   padding: 5rem 0;
 }
 
-.swiperSectionWrap {
+.swiperWrap {
   display: flex;
-  justify-content: center;
+  position: relative;
   gap: 24px;
+  justify-content: center;
+}
+
+.swiperSectionWrap {
+  position: relative;
 }
 
 .h2SecondarySection{
@@ -53,6 +58,7 @@
 .slideImg {
   width: 512px;
   height: 437px;
+  opacity: 0.32;
 }
 
 .learnMoreBtn {
@@ -122,20 +128,6 @@
 .arrow {
   width: 16px;
   height: 16px;
-}
-
-///active Styles
-
-.learnMoreBtnNone{
-  display: none;
-}
-
-.creativeServicesNone{
-  display: none;
-}
-
-.slideImgNone{
-  opacity: 0.32;
 }
 
 @media screen and (max-width: $mobile-media) {

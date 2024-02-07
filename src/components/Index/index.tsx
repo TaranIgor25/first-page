@@ -1,5 +1,5 @@
 import Header from "./FirstSection/Header";
-import FirstSection from './FirstSection/index';
+import FirstSection from "./FirstSection/index";
 import FirstSectionFooter from "./FirstSection/Footer";
 import SecondarySection from "./SecondarySection";
 import ThirdSection from "./ThirdSection";
@@ -10,29 +10,28 @@ import SevenSection from "./SevenSection";
 import Footer from "./Footer";
 
 import "../../styles/normalize.css";
-import '../../styles/global.scss';
+import "../../styles/global.scss";
 import FixedSection from "./FixedSection";
 
 export const Index = () => {
-
   return (
     <>
-      <FixedSection/>
-      <div className="body-wrap">
-        <FirstSection> 
-          <Header/>
-        </FirstSection>
-        <main>
-          <FirstSectionFooter/>
-          <SecondarySection/>
-          <ThirdSection/>
-          <FourSection/>
-          <FiveSection/>
-          <SixSection/>
-          <SevenSection/>
-        </main>
-          <Footer/>
-      </div>
+      <FixedSection />
+        <div className="body-wrap body-wrap-mobile">
+          <FirstSection>
+            <Header />
+          </FirstSection>
+          <main>
+            <FirstSectionFooter />
+            <SecondarySection />
+            <ThirdSection />
+            <FourSection />
+            <FiveSection />
+            <SixSection />
+            <SevenSection />
+          </main>
+          <Footer />
+        </div>
     </>
   );
 };

@@ -1,25 +1,87 @@
+import { useEffect, useState } from "react";
 import style from "./secondarySection.module.scss";
 
 export const SecondarySection = () => {
-  const imgsArr = [
-    "./img/carousel-item-01.jpg",
-    "./img/carousel-item-02.jpg",
-    "./img/carousel-item-03.jpg",
-    "./img/carousel-item-04.jpg",
-    "./img/carousel-item-05.jpg",
+  const runLength = 536;
+  const transition = 300;
+
+  let swipesArr = [
+    { imgSwipe: "./img/carousel-item-01.jpg" },
+    { imgSwipe: "./img/carousel-item-02.jpg" },
+    { imgSwipe: "./img/carousel-item-03.jpg" },
+    { imgSwipe: "./img/carousel-item-04.jpg" },
+    { imgSwipe: "./img/carousel-item-05.jpg" },
   ];
 
-  const swipesRender = imgsArr.map((img, i) => (
-    <div key={i} className={style.swipe}>
-      <img src={img} alt="" className={style.slideImg} />
-      <div className={style.btnWrap}>
-        <div className={style.learnMoreBtn}>
-          <a>Learn more</a>
+  swipesArr = [...swipesArr, ...swipesArr, ...swipesArr];
+
+  const [runSwipe, setRunSwipe] = useState<number>(0);
+  const [infinitySwipe, setInfinitySwipe] = useState(swipesArr);
+  const [transitionDuration, setTransitionDuration] = useState<number>(0);
+  const [activeClass, setActiveClass] = useState(7);
+  const [allowSwipe, setAllowSwipe] = useState(true);
+
+  const rightSwipe = () => {
+    if (allowSwipe) {
+      setRunSwipe(runSwipe - runLength);
+      setTransitionDuration(transition);
+      setActiveClass(activeClass + 1);
+      setAllowSwipe(false);
+      setTimeout(() => {
+        setAllowSwipe(true);
+      }, 300);
+    }
+  };
+
+  const leftSwipe = () => {
+    if (allowSwipe) {
+      setRunSwipe(runSwipe + runLength);
+      setTransitionDuration(transition);
+      setActiveClass(activeClass - 1);
+      setAllowSwipe(false);
+      setTimeout(() => {
+        setAllowSwipe(true);
+      }, 300);
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (runSwipe === -2680 || runSwipe === 2680) {
+        setRunSwipe(0);
+        setTransitionDuration(0);
+        setActiveClass(7);
+      }
+    }, transition);
+  }, [runSwipe]);
+
+  const swipesRender = infinitySwipe.map((swipe: any, iSwipe: any) => (
+    <div key={iSwipe} className={style.swipe}>
+      {activeClass === iSwipe ? (
+        <img
+          src={swipe.imgSwipe}
+          alt=""
+          className={style.slideImg}
+          style={{ opacity: 1 }}
+        />
+      ) : (
+        <img
+          src={swipe.imgSwipe}
+          alt=""
+          className={style.slideImg}
+          style={{ opacity: 0.32 }}
+        />
+      )}
+      {activeClass === iSwipe && (
+        <div className={style.btnWrap}>
+          <div className={style.learnMoreBtn}>
+            <a>Learn more</a>
+          </div>
+          <div className={style.creativeServices}>
+            <a className={style.creativeServicesLink}>Creative Services</a>
+          </div>
         </div>
-        <div className={style.creativeServices}>
-          <a className={style.creativeServicesLink}>Creative Services</a>
-        </div>
-      </div>
+      )}
     </div>
   ));
 
@@ -36,14 +98,27 @@ export const SecondarySection = () => {
             cupidatat.
           </p>
         </div>
-        <div className={style.swiperSectionWrap}>{swipesRender}</div>
+        <div className={style.swiperSectionWrap}>
+          <div
+            style={{
+              transform: `translate(${runSwipe}px, 0)`,
+              transitionDuration: `${transitionDuration}ms`,
+            }}
+            className={style.swiperWrap}
+          >
+            {swipesRender}
+          </div>
+        </div>
         <div className={style.sliderControlSection}>
           <div className={style.sliderControlWrap}>
-            <div className={style.sliderBtnLeft}>
+            <div
+              onClick={leftSwipe}
+              className={style.sliderBtnLeft}
+            >
               <span className={style.leftBtn}></span>
               <img src="./img/arrow.svg" alt="arrow" className={style.arrow} />
             </div>
-            <div className={style.sliderBtnRight}>
+            <div onClick={rightSwipe} className={style.sliderBtnRight}>
               <span className={style.rightBtn}></span>
               <img src="./img/arrow2.svg" alt="arrow" className={style.arrow} />
             </div>

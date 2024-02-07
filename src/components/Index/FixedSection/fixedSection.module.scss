@@ -97,13 +97,8 @@
 }
 
 .dropDown{
-  visibility: hidden;
   position: absolute;
   cursor: pointer;
-}
-
-.pagesBtn:hover  .dropDown {
-  visibility: visible;
 }
 
 .dropDownUl{

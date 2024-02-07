@@ -17,6 +17,7 @@
 }
 
 .h1FirstSection {
+  margin-top: 0px;
   margin-bottom: 16px;
   line-height: 1.11;
   letter-spacing: -0.04em;
@@ -25,7 +26,7 @@
 }
 
 .pFirstSection {
-  margin: 20px 0 20px 0;
+  margin: 0px;
   animation: down 1s forwards;
   opacity: 0;
   animation-delay: 0.3s;
@@ -39,6 +40,7 @@
   animation: down 1s forwards;
   opacity: 0;
   animation-delay: 0.4s;
+  margin-top: 32px;
 }
 
 .inputPhone {
@@ -74,7 +76,7 @@ input.inputPhone::placeholder {
   margin-top: 32px;
   margin-bottom: 0;
   list-style-type: none;
-  font-size: 18px;
+  font-size: 16px;
   animation: down 1s forwards;
   opacity: 0;
   animation-delay: 0.5s;

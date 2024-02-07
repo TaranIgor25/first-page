@@ -1,4 +1,5 @@
 @import "../../../styles/mixins.scss";
+@import "../../../styles/animation.scss";
 
 .modalSection {
   margin: -44px 0px 0px -24px;
@@ -7,6 +8,8 @@
   position: fixed;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 24;
+  animation: up 0.15s forwards;
+  opacity: 0;
 }
 
 .modal {
