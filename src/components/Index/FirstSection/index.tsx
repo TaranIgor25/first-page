@@ -11,7 +11,7 @@ export const FirstSection = ({ children } : any) => {
 
   useEffect(() => {
     document.addEventListener('click', ((e) => {
-      if (e.target === refModal.current) { /// Тут подумать над условием
+      if (e.target === refModal.current) { 
         setOpenModal(false);
       }
     }))

@@ -1,6 +1,15 @@
+import { useEffect, useRef, useState } from "react";
 import style from "./fiveSection.module.scss";
+import { observer } from "../observer";
 
 export const FiveSection = () => {
+  const animElement = useRef<any>(null);
+  const [startAnimation, setStartAnimation] = useState<boolean>(false);
+
+  useEffect(() => {
+    observer([animElement.current]);
+  }, []);
+
   const contentArr = [
     "Unlimited domains",
     "Unlimited web pages",
@@ -46,7 +55,8 @@ export const FiveSection = () => {
 
   const premiumBlocksRender = premiumBlockArr.map((block, i) => (
     <div
-      key={i} className={`${style.premiumPlan} ${block.borderClass} ${block.animationClass}`}
+      key={i}
+      className={`${style.premiumPlan} ${block.borderClass} ${block.animationClass}`}
     >
       <div className={style.premiumPlanWrap}>
         <div className={style.planDescription}>
@@ -84,7 +94,7 @@ export const FiveSection = () => {
                 qui officia deserunt mollit laborum — semper quis lectus nulla.
               </p>
             </div>
-            <div className={style.contentFiveSection}>
+            <div ref={animElement} className={style.contentFiveSection}>
               <div className={style.plansBlock}>
                 <div className={style.svgArrow}>
                   <img src="./img/bend-arrow.svg" alt="bend arrow" />

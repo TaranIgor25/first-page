@@ -53,7 +53,6 @@ export const ThirdSection = () => {
       onClick={() => reRenderObj(i)}
       key={i}
       className={style.leftBlockBtn + ' ' + (highlightBtn === i ? (style.btnOnClick) : (style.btnHover)) }
-      //style.leftBlockBtn + ' ' + ( highlightBtn === i && style.btnOnClick)
     >
       <img src={li.img} alt="icon" className={style.svgThirdSection} />
       <span className={style.intoBtnSpan}>{li.text}</span>
