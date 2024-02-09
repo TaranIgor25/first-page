@@ -4,10 +4,10 @@ import { observer } from "../observer";
 
 export const FiveSection = () => {
   const animElement = useRef<any>(null);
-  const [startAnimation, setStartAnimation] = useState<boolean>(false);
+  const [startAnimation, setStartAnimation] = useState(false);
 
   useEffect(() => {
-    observer([animElement.current]);
+    observer([animElement.current], setStartAnimation);
   }, []);
 
   const contentArr = [
@@ -102,7 +102,7 @@ export const FiveSection = () => {
                 <div className={style.headerPlans}>All plans include:</div>
                 <ul className={style.planContent}>{listLiRender}</ul>
               </div>
-              {premiumBlocksRender}
+              {startAnimation && premiumBlocksRender}
             </div>
           </div>
         </div>

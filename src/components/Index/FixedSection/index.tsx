@@ -4,34 +4,27 @@ import { ExitIcon } from "./ExitIcon";
 
 import style from "./fixedSection.module.scss";
 import { useEffect, useRef, useState } from "react";
+import { useClickOutside } from "../useClickOutside";
+
+const dropDownArr = [
+  "Home",
+  "About",
+  "Blog",
+  "Blog Post",
+  "Testimonials",
+  "Help center",
+  "404",
+  "Contact",
+];
 
 export const FixedSection = () => {
   const [visibleSection, setVisibleSection] = useState(true);
   const [dropDown, setDropDown] = useState<boolean>();
   const refDropDown = useRef<any>();
 
-  const dropDownArr = [
-    "Home",
-    "About",
-    "Blog",
-    "Blog Post",
-    "Testimonials",
-    "Help center",
-    "404",
-    "Contact",
-  ];
-
-  useEffect(() => {
-    const clickListener = (e: any) => {
-      if (dropDown && !refDropDown.current?.contains(e.target)) {
-        setDropDown(!dropDown);
-      }
-    };
-    document.addEventListener("click", clickListener);
-    return () => {
-      document.removeEventListener("click", clickListener);
-    };
-  }, [dropDown]);
+  useClickOutside(refDropDown, dropDown, () => {
+    setDropDown(!dropDown);
+  })
 
   const dropDownListRender = dropDownArr.map((page, i) => (
     <li key={i} className={style.dropDownLi}>

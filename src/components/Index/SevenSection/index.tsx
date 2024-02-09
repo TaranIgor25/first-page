@@ -1,24 +1,33 @@
 import style from "./sevenSection.module.scss";
+import { observer } from "../observer";
+import { useEffect, useRef, useState } from "react";
+
+const colorBlocksArr = [
+  {
+    class: style.colorBlock + " " + style.colorBlockGreen,
+    img: "./img/seven-section1.svg",
+  },
+  {
+    class: style.colorBlock + " " + style.colorBlockPurple,
+    img: "./img/seven-section2.svg",
+  },
+  {
+    class: style.colorBlock + " " + style.colorBlockBlue,
+    img: "./img/seven-section3.svg",
+  },
+  {
+    class: style.colorBlock + " " + style.colorBlockPink,
+    img: "./img/seven-section4.svg",
+  },
+];
 
 export const SevenSection = () => {
-  const colorBlocksArr = [
-    {
-      class: style.colorBlock + " " + style.colorBlockGreen,
-      img: "./img/seven-section1.svg",
-    },
-    {
-      class: style.colorBlock + " " + style.colorBlockPurple,
-      img: "./img/seven-section2.svg",
-    },
-    {
-      class: style.colorBlock + " " + style.colorBlockBlue,
-      img: "./img/seven-section3.svg",
-    },
-    {
-      class: style.colorBlock + " " + style.colorBlockPink,
-      img: "./img/seven-section4.svg",
-    },
-  ];
+  const animElement = useRef<any>(null);
+  const [startAnimation, setStartAnimation] = useState(false);
+  
+  useEffect(() => {
+    observer([animElement.current], setStartAnimation);
+  }, []);
 
   const colorBlocksRender = colorBlocksArr.map((block, i) => (
     <div key={i} className={block.class}>
@@ -45,7 +54,9 @@ export const SevenSection = () => {
                 Put clarity at the center of your website
               </h2>
             </div>
-            <div className={style.sevenSectionMain}>{colorBlocksRender}</div>
+            <div ref={animElement} className={style.sevenSectionMain}>
+              {startAnimation && colorBlocksRender}
+            </div>
             <div className={style.phoneNumberWindow}>
               <div className={style.backgroundDiv}>
                 <img
@@ -64,7 +75,7 @@ export const SevenSection = () => {
                   className={`${style.inputBlock} ${style.inputBlockFooter}`}
                 >
                   <input
-                    id="2" 
+                    id="2"
                     name="phone number"
                     placeholder="Phone number"
                     type="tel"

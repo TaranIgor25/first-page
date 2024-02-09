@@ -176,16 +176,20 @@
     top: 9px;
     transition: all .15s;
   }
-
-  .burgerBtn:hover::before{
+  
+  .burgerBtnActive:before{
     transform: rotate(45deg);
     top: 9px;
   }
-  .burgerBtn:hover::after{
+  .burgerBtnActive:after{
     bottom: 9px;
     transform: rotate(-45deg);
   }
-  .burgerBtn:hover .burgerSpan{
+  .burgerBtnActive .burgerSpan{
     transform: scale(0);
   }
 }
+
+
+
+

@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 import style from "./secondarySection.module.scss";
 
+const runLength = 536;
+const transition = 300;
+
+let swipesArr = [
+  { imgSwipe: "./img/carousel-item-01.jpg" },
+  { imgSwipe: "./img/carousel-item-02.jpg" },
+  { imgSwipe: "./img/carousel-item-03.jpg" },
+  { imgSwipe: "./img/carousel-item-04.jpg" },
+  { imgSwipe: "./img/carousel-item-05.jpg" },
+];
+
+swipesArr = [...swipesArr, ...swipesArr, ...swipesArr];
+
 export const SecondarySection = () => {
-  const runLength = 536;
-  const transition = 300;
-
-  let swipesArr = [
-    { imgSwipe: "./img/carousel-item-01.jpg" },
-    { imgSwipe: "./img/carousel-item-02.jpg" },
-    { imgSwipe: "./img/carousel-item-03.jpg" },
-    { imgSwipe: "./img/carousel-item-04.jpg" },
-    { imgSwipe: "./img/carousel-item-05.jpg" },
-  ];
-
-  swipesArr = [...swipesArr, ...swipesArr, ...swipesArr];
-
   const [runSwipe, setRunSwipe] = useState<number>(0);
-  const [infinitySwipe, setInfinitySwipe] = useState(swipesArr);
   const [transitionDuration, setTransitionDuration] = useState<number>(0);
+
+  const [infinitySwipe, setInfinitySwipe] = useState(swipesArr);
   const [activeClass, setActiveClass] = useState(7);
   const [allowSwipe, setAllowSwipe] = useState(true);
 

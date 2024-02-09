@@ -1,14 +1,15 @@
-export const observer = (targets : any) => {
+export const observer = (targets : any, startAnim: any) => {
   let options = {
     root: null,
     rootMargin: "0px",
     threshold: 0.5,
   };
   
-  let callback = (entries : any, observer: any) => {
-    entries.forEach((entry : any) => {
+  let callback : IntersectionObserverCallback = (entries, observer) => {
+    entries.forEach((entry) => {
       if(entry.isIntersecting) {
         console.log('yes');
+        startAnim(true);
       }
     })
   };

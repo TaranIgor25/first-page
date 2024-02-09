@@ -1,8 +1,9 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
+@import "../../../styles//animation.scss";
 
 .navBurger{
-  display: none;
+  display: block;
   position: fixed;
   background-color: $main-background-color;
   z-index: 300;
@@ -11,10 +12,12 @@
   height: 100vh;
   margin-left: -24px; 
   color: $third-font-color;
+  animation: burgerOpen 0.25s forwards;
+  opacity: 0;
 }
 
 .burgerWrap {
-  padding: 24px 16px 24px;
+  padding: 24px;
 }
 
 .logo{
@@ -36,7 +39,7 @@
 
 .burgerLi, .resourcesLi{
   padding: 8px 8px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .resourcesLi{
@@ -61,4 +64,11 @@
   border-top: 1px solid;
   border-color: $border-color;
   margin: 8px 0px;
+}
+
+
+@media screen and (min-width: $mobile-media) {
+  .navBurger{
+    display: none;
+  }
 }

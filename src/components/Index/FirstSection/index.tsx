@@ -4,24 +4,23 @@ import style from "./firstSection.module.scss";
 
 import { useState, useRef, useEffect } from "react";
 
-export const FirstSection = ({ children } : any) => {
-  
-  const [openModal, setOpenModal] : any = useState(false);
+const listContent = [
+  "Lorem ipsum is placeholder text commonly.",
+  "Excepteur sint occaecat cupidatat.",
+  "Lorem ipsum is placeholder text commonly.",
+];
+
+export const FirstSection = ({ children }: any) => {
+  const [openModal, setOpenModal]: any = useState();
   const refModal = useRef(null);
 
   useEffect(() => {
-    document.addEventListener('click', ((e) => {
-      if (e.target === refModal.current) { 
+    document.addEventListener("click", (e) => {
+      if (e.target === refModal.current) {
         setOpenModal(false);
       }
-    }))
-  }, [])
-
-  const listContent = [
-    "Lorem ipsum is placeholder text commonly.",
-    "Excepteur sint occaecat cupidatat.",
-    "Lorem ipsum is placeholder text commonly.",
-  ];
+    });
+  }, []);
 
   const listItemRender = listContent.map((content, i) => (
     <li key={i} className={style.firstSectionLi}>

@@ -42,3 +42,14 @@
     opacity: 0.33;
   }
 }
+
+
+@keyframes burgerOpen {
+  0%{
+    transform: translate(-30%, 0);
+  }
+  100%{
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
