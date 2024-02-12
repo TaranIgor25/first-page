@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+ 
+ .layout {
+  background-color: $main-background-color;
+ }
+
+
+ .layoutDark input {
+  background-color: rgb(245, 245, 245);
+ }
+
+ .layoutDark h1,h2 {
+  color: rgb(29, 29, 32)
+ }
+
+ .layoutDark p,span,li {
+  color: rgb(82, 82, 90)
+ }
+
+
+

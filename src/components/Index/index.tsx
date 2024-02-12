@@ -12,12 +12,15 @@ import Footer from "./Footer";
 import "../../styles/normalize.css";
 import "../../styles/global.scss";
 import FixedSection from "./FixedSection";
+import { ThemeProvider } from "./ThemeProvider";
+import Layout from "./Layout";
 
 export const Index = () => {
   return (
     <>
-      <FixedSection />
-        <div className="body-wrap body-wrap-mobile">
+      <ThemeProvider>
+        <Layout>
+          <FixedSection />
           <FirstSection>
             <Header />
           </FirstSection>
@@ -31,7 +34,8 @@ export const Index = () => {
             <SevenSection />
           </main>
           <Footer />
-        </div>
+        </Layout>
+      </ThemeProvider>
     </>
   );
 };

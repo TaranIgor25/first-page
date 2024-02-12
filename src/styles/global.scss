@@ -1,7 +1,6 @@
 @import "./variables.scss";
 
 body {
-  background-color: $main-background-color;
   letter-spacing: $main-letter-spacing;
   line-height: 1.5;
 
@@ -10,6 +9,7 @@ body {
   font-size: $font-size-main;
 
   margin: 0 auto;
+  user-select: none;
 }
 
 h1, h2 {
