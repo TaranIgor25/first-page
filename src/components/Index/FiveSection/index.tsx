@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./fiveSection.module.scss";
-import { observer } from "../observer";
+import { observer } from "../../../hoocks/observer";
 
 export const FiveSection = () => {
   const animElement = useRef<any>(null);

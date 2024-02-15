@@ -2,9 +2,6 @@
 @import "../../../styles/mixins.scss";
 
 .secondarySection{
-  border-top: solid 1px;
-  border-bottom: solid 1px;
-  border-color: $second-background-color;
   @include wrapper;
   padding: 0px;
 }
@@ -45,6 +42,7 @@
   max-width: 48rem;
   text-align: center;
   margin: 0 auto;
+  padding: 0 24px;
   padding-bottom: 4rem;
 }
 
@@ -106,6 +104,7 @@
   justify-content: space-between;
   max-width: $main-wight;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .sliderBtnRight, .sliderBtnLeft  {
@@ -127,6 +126,12 @@
 .arrow {
   width: 16px;
   height: 16px;
+}
+
+html[dark-theme="false"] {
+  .sliderBtnRight, .sliderBtnLeft  {
+    background-color: $btn-color;
+  }
 }
 
 @media screen and (max-width: $mobile-media) {

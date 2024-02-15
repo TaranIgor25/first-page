@@ -2,6 +2,9 @@
 @import "../../../styles/mixins.scss";
 
 .headerWrapper{
+  @include wrapper;
+  padding-top: 0px;
+  padding-bottom: 0px;
   display: flex;
   justify-content: center;
   height: 80px;
@@ -19,6 +22,7 @@
   flex-direction: row;
   padding-left: 20px;
   color: $third-font-color;
+  font-weight: 500;
 }
 
 .logo {
@@ -114,7 +118,6 @@
   margin-top: 0px;
   opacity: 0;
   pointer-events: none;
-
 }
 
 .dropDownArrow{
@@ -133,6 +136,22 @@
 
 .burgerBtn{
   display: none;
+}
+
+html[dark-theme="false"] {
+  .navUl {
+    color: $secondary-font-color-light;
+  }
+
+  .headerDropDown {
+    background-color: $main-background-color-light;
+    color: $main-font-color-light;
+    box-shadow: 0px 5px 8px -7px;
+  }
+
+  .liNav:hover {
+    color: $main-font-color-light;
+  }
 }
 
 @media screen and (max-width: $mobile-media) {

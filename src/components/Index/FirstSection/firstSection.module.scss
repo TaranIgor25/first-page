@@ -143,6 +143,25 @@ input.inputPhone::placeholder {
   opacity: 0.8;
 }
 
+html[dark-theme="false"] {
+  .firstSection {
+    background-color: $main-background-color-light;
+  }
+
+  .inputPhone {
+    background-color: $main-background-color-light;
+    color: $secondary-font-color-light;
+    border-color: $third-font-color-light;
+  }
+  input:focus {
+    border-color: $secondary-font-color-light;
+  }
+  
+  .svgBackground {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: $tablet-media) {
   .h1FirstSection {
     font-size: 64px;

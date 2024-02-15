@@ -1,11 +1,13 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
 
+
 .fourSectionWrap {
   @include wrapper;
   border-top: solid 1px;
   border-color: $second-background-color;
-  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .circleMobile{
@@ -97,6 +99,16 @@
 
 .imgThird{
   background-image: url(../../../../public/img/mockup-image-04.jpg);
+}
+
+html[dark-theme="false"] {
+  .fourSectionWrap {
+    border-color: $border-section-color-light;
+  }
+  .circle, .circleMobile {    
+    background-color: $hover-btn-color;
+    color: $main-background-color-light;
+  }
 }
 
 @media screen and (max-width: $tablet-media) {

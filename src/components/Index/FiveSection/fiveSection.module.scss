@@ -36,7 +36,7 @@
 }
 
 .headerPlans{
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.125rem;
   line-height: 1.5;
   font-family: $secondary-font-family;
@@ -177,6 +177,56 @@
   animation-delay: 0.3s;
 }
 
+html[dark-theme="false"] {
+  .fiveSection {
+    border: none;
+    background-color: $main-background-color;
+  }
+
+  .h2FiveSection{
+    color: $main-font-color;
+  }
+
+  .pFiveSection, .planLi{
+    color: $secondary-font-color;
+  }
+
+  .premiumPlan {
+    background-color: $main-background-color-light;
+  }  
+
+  .planName, .price {
+    color: $main-font-color-light;
+  }
+
+  .premiumPlanWrap {
+    color: rgb(110, 110, 118);
+  }
+
+  .borderSale{
+    background-color: rgb(178,245,234);
+    color: rgb(49,151,149);
+  }
+
+  .borderPlan{
+    border: none;
+  }
+
+  .goPremiumLink {
+    color: $main-font-color;
+    background-color: rgb(159, 122, 234);
+  }
+
+  .goPremiumFirst {
+    background-color: $btn-color;
+    color: $main-font-color;
+  }
+
+  .goPremiumLink:hover {
+    opacity: 0.8;
+  }
+}
+
 @media screen and (max-width: $tablet-media) {
   .contentFiveSection{
     grid-template-columns: 1fr 1fr;
@@ -191,7 +241,7 @@
   }
 
   .fiveSectionWrap{
-    padding: 48px 0px;
+    padding: 48px 24px;
   }
 }
 

@@ -1,5 +1,5 @@
 import style from "./sevenSection.module.scss";
-import { observer } from "../observer";
+import { observer } from "../../../hoocks/observer";
 import { useEffect, useRef, useState } from "react";
 
 const colorBlocksArr = [

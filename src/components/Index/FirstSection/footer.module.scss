@@ -3,9 +3,12 @@
 @import "../../../styles/animation.scss";
 
 .firstSectionFooterWrap{
+  @include wrapper;
+  padding-top: 0px;
   display: flex;
   justify-content: center;
   padding-bottom: 5rem;
+  border-bottom: 1px solid $second-background-color;
 }
 
 .divWrap{
@@ -44,6 +47,25 @@
 
 .fourBlock{
   animation-delay: 0.4s;
+}
+
+html[dark-theme="false"] {
+  .blocks{
+    background-color: $main-background-color-light;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  }
+
+  .numbers {
+    color: $main-font-color-light;
+  }
+
+  .firstSectionFooter{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+  }
+
+  .firstSectionFooterWrap{
+    border-bottom: none;
+  }
 }
 
 @media screen and (max-width: 1024px) {

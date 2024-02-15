@@ -12,30 +12,26 @@ import Footer from "./Footer";
 import "../../styles/normalize.css";
 import "../../styles/global.scss";
 import FixedSection from "./FixedSection";
-import { ThemeProvider } from "./ThemeProvider";
-import Layout from "./Layout";
 
 export const Index = () => {
   return (
     <>
-      <ThemeProvider>
-        <Layout>
-          <FixedSection />
-          <FirstSection>
-            <Header />
-          </FirstSection>
-          <main>
-            <FirstSectionFooter />
-            <SecondarySection />
-            <ThirdSection />
-            <FourSection />
-            <FiveSection />
-            <SixSection />
-            <SevenSection />
-          </main>
-          <Footer />
-        </Layout>
-      </ThemeProvider>
+      <FixedSection />
+      <div className="body-wrap">
+        <FirstSection>
+          <Header />
+        </FirstSection>
+        <FirstSectionFooter />
+        <main>
+          <SecondarySection />
+          <ThirdSection />
+          <FourSection />
+          <FiveSection />
+          <SixSection />
+          <SevenSection />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 };

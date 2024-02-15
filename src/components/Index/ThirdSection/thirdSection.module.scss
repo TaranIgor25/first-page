@@ -1,6 +1,10 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
 
+.thirdSection{
+  border-top: 1px solid $second-background-color;
+}
+
 .thirdSectionWrap{
   @include wrapper;
   justify-content: center;
@@ -10,7 +14,9 @@
   max-width: 48rem;
   text-align: center;
   margin: 0 auto;
+  padding: 0 24px;
   padding-bottom: 4rem;
+
 }
 
 .h2ThirdSection {
@@ -94,7 +100,6 @@
   display: flex;
 }
 
-
 .contentVideoBlock{
   position: absolute;
   display: flex;
@@ -144,6 +149,46 @@
   align-self: center;
 }
 
+html[dark-theme="false"] {
+  .thirdSection{
+    border: none;
+    background: linear-gradient(180deg, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 55%);
+  }
+
+  .leftBlockBtn {
+    background-color: $main-background-color-light;
+    color: $secondary-font-color-light;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .leftBlockBtn:hover {
+    background-color: $third-background-color-light;
+  }
+
+  .btnOnClick {
+    background-color: $btn-color;
+    color: $main-background-color-light;
+  }
+
+  .btnOnClick:hover {
+    background-color: $btn-color;
+    color: $main-background-color-light;
+  }
+
+  .videoDescription{
+    background-color: $main-background-color-light;
+  }
+
+  .videoName {
+    color: $main-font-color-light;
+  }
+
+  .videTime{
+    background-color: $secondary-font-color-light;
+    color: $main-background-color-light;
+  }
+}
+
 @media screen and (max-width: $tablet-media) {
   .contentBlockWrap {
     display: grid;
@@ -154,9 +199,9 @@
   .leftBlockSort {
     display: flex;
     flex-direction: row;
-    padding-right: 0px;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 0 24px;
   }
 
   .leftBlockBtn {

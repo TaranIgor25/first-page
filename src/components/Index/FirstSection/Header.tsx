@@ -1,9 +1,8 @@
-import { useRef, useState, useEffect, useContext } from "react";
+import { useRef, useState, useEffect, useContext, useLayoutEffect } from "react";
 import BurgerMenu from "./BurgerMenu";
 
 import style from "./header.module.scss";
-import { useClickOutside } from "../useClickOutside";
-import { ThemeContext } from "../ThemeProvider";
+import { useClickOutside } from "../../../hoocks/useClickOutside";;
 
 const whiteTheme = {
   left: "0px",
@@ -15,11 +14,14 @@ const darkTheme = {
 };
 
 export const Header = () => {
-  const [toggleTheme, setToggleTheme] = useState<boolean>(true);
+  const [toggleTheme, setToggleTheme] = useState<boolean>(false);
   const [themeStyle, setThemeStyle] = useState<object>(darkTheme);
   const [openCloseBurger, setOpenCloseBurger] = useState<boolean>(false);
   const burgerRef = useRef<any>(null);
-  const {isDark, setIsDark} = useContext<any>(ThemeContext);
+
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute('dark-theme', `${toggleTheme}`);
+  }, [toggleTheme])
 
   const setTheme = () => {
     setToggleTheme(!toggleTheme);
@@ -28,7 +30,6 @@ export const Header = () => {
     } else {
       setThemeStyle(darkTheme);
     }
-    setIsDark(!isDark)
   };
 
   useClickOutside(burgerRef, openCloseBurger, () => {

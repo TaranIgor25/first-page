@@ -88,6 +88,16 @@
   flex-shrink: 0;
 }
 
+html[dark-theme="false"] {
+  .h6Footer{
+    color: $main-font-color-light;
+    font-weight: 500;
+  }
+  .footerLink, .footerFooter{
+    color: $secondary-font-color-light;
+  }
+}
+
 
 @media screen and (max-width: $mobile-media) {
   .mainFooter {

@@ -1,6 +1,7 @@
 @import "./variables.scss";
 
 body {
+  background-color: $main-background-color;
   letter-spacing: $main-letter-spacing;
   line-height: 1.5;
 
@@ -34,6 +35,20 @@ p {
 .body-wrap {
   max-width: 100vw;
   overflow: hidden;
-  padding: 0px 1.5rem;
+}
+
+html[dark-theme='false'] {
+  body {
+    background-color: $main-background-color-light;
+    color: $secondary-font-color-light;
+  }
+
+  h1, h2 {
+    color: $main-font-color-light;
+  }
+  
+  p {
+    color: $secondary-font-color-light;
+  }
 }
 

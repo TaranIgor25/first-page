@@ -54,6 +54,16 @@
   color: $btn-color;
 }
 
+html[dark-theme="false"] {
+  .sixSectionWrap{
+    border: none;
+    border-bottom: 1px solid $border-section-color-light;
+  }
+
+  .citeReviews{
+    color: $main-font-color-light;
+  }
+}
 
 @media screen and (max-width: $tablet-media) {
   .sixSectionBlocks {
@@ -66,7 +76,7 @@
 
 @media screen and (max-width: $mobile-media) {
   .sixSectionWrap{
-    padding: 48px 0;
+    padding: 48px 24px;
   }
 }
 

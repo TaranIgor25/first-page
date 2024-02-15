@@ -4,7 +4,7 @@ import { ExitIcon } from "./ExitIcon";
 
 import style from "./fixedSection.module.scss";
 import { useEffect, useRef, useState } from "react";
-import { useClickOutside } from "../useClickOutside";
+import { useClickOutside } from "../../../hoocks/useClickOutside";
 
 const dropDownArr = [
   "Home",
