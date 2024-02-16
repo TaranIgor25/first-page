@@ -158,3 +158,19 @@ html[dark-theme="false"] {
     height: auto;
   }
 }
+
+
+html[mobile-mode='true'] {
+  .h2SecondarySection{
+    font-size: $font-size-media;
+  }
+  .secondarySectionWrap {
+    padding: 48px 0px;
+  }
+  .sliderControlSection{
+    margin-top: 48px;
+  }
+  .secondarySectionTittle {
+    padding-bottom: 48px;
+  }
+}

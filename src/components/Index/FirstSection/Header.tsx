@@ -8,7 +8,7 @@ import {
 import BurgerMenu from "./BurgerMenu";
 
 import style from "./header.module.scss";
-import { useClickOutside } from "../../../hoocks/useClickOutside";
+import { useClickOutside } from "../useClickOutside";
 
 const whiteTheme = {
   left: "0px",

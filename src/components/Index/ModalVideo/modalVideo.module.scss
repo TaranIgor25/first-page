@@ -1,5 +1,6 @@
 @import "../../../styles/mixins.scss";
 @import "../../../styles/animation.scss";
+@import "../../../styles/variables.scss";
 
 .modalSection {
   width: 100vw;
@@ -39,3 +40,8 @@
   overflow: hidden;
 }
 
+html[mobile-mode='true'] {
+  .modalSection {
+    @include mobileModeWrap;
+  }
+}

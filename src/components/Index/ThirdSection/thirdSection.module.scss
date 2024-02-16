@@ -235,3 +235,42 @@ html[dark-theme="false"] {
     padding-bottom: 48px;
   }
 }
+
+html[mobile-mode='true'] {
+  .contentBlockWrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .leftBlockSort {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 24px;
+  }
+
+  .h2ThirdSection{
+    font-size: $font-size-media;
+  }
+   
+  .rightBlockVideo{
+    grid-template-columns: 1fr;
+    max-width: 384px;
+    margin: 0 auto;
+  }
+  
+  .thirdSectionWrap{
+   padding: 48px 0;
+  }
+  
+  .textBlock {
+   padding-bottom: 48px;
+  }
+
+  .leftBlockBtn {
+    margin: 4px;
+  }
+}
+

@@ -164,3 +164,51 @@ html[dark-theme="false"] {
     display: none;
   }
 }
+
+html[mobile-mode='true'] {
+  .h2FourSection{
+    font-size: $font-size-media;
+  }
+
+  .fourSectionBlocks {
+    padding: 48px 0px;
+  }
+
+  .fourSectionHeader {
+    padding-bottom: 0px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .fourSectionMain{
+    max-width: 384px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  .circle{
+    display: none;
+  }
+
+  .circleMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: rgba(49, 151, 149, 0.25);
+    border-radius: 9999px;
+    width: 3rem;
+    height: 3rem;
+    color: rgb(79, 209, 197);
+    flex-shrink: 0;
+
+    margin: 48px 0px 32px 0px;
+  }
+  .numbersBlock {
+    display: none;
+  }
+}

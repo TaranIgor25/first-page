@@ -87,5 +87,17 @@ html[dark-theme="false"] {
   }
 }
 
+html[mobile-mode='true']{
+  .divWrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .blocks{
+    padding: 32px 0px 32px 0px;
+  }
+  .firstSectionFooterWrap{
+    padding-bottom: 40px;
+  }
+}
 
 

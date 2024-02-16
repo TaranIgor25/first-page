@@ -58,15 +58,17 @@
 .tabletBtn, .computerBtn{
   margin: 0px 8px;
   display: flex;
-  fill: rgb(226, 232, 240);
-}
-
-.tabletBtn {
-  fill: rgb(100,116,139);
+  fill:  rgb(100,116,139);
 }
 
 .tabletBtn:hover, .computerBtn:hover{
   fill: rgb(149,162,181);
+}
+
+.activeClass {
+  margin: 0px 8px;
+  display: flex;
+  fill: rgb(226, 232, 240);
 }
 
 .rightBlock{

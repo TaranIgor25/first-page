@@ -255,3 +255,15 @@ html[dark-theme="false"] {
     display: none;
   }
 }
+
+html[mobile-mode='true'] {
+  .contentFiveSection{
+    grid-template-columns: 1fr 1fr;
+    max-width: 672px;
+    margin: 0 auto;
+  }
+
+  .svgArrow{
+    display: none;
+  }
+}

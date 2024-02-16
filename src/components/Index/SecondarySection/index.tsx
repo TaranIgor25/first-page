@@ -24,10 +24,10 @@ export const SecondarySection = () => {
 
   const rightSwipe = () => {
     if (allowSwipe) {
-      setRunSwipe(runSwipe - runLength);
       setTransitionDuration(transition);
       setActiveClass(activeClass + 1);
       setAllowSwipe(false);
+      setRunSwipe(runSwipe - runLength);
       setTimeout(() => {
         setAllowSwipe(true);
       }, 300);
@@ -54,6 +54,17 @@ export const SecondarySection = () => {
         setActiveClass(7);
       }
     }, transition);
+  });
+
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setTransitionDuration(transition);
+      setActiveClass(activeClass + 1);
+      setRunSwipe(runSwipe - runLength);
+    }, 5000);
+    return () => {
+      clearInterval(interval);
+    }
   }, [runSwipe]);
 
   const swipesRender = infinitySwipe.map((swipe: any, iSwipe: any) => (

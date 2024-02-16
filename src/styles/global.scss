@@ -37,6 +37,16 @@ p {
   overflow: hidden;
 }
 
+html[mobile-mode='true'] {
+  .body-wrap {
+    max-width: 768px;
+    margin: 0 auto;
+    border: 1px solid;
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
 html[dark-theme='false'] {
   body {
     background-color: $main-background-color-light;

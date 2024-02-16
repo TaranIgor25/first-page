@@ -66,8 +66,26 @@
   margin: 8px 0px;
 }
 
+html[dark-theme="false"] {
+  .navBurger{
+    background-color: $main-background-color-light;
+    color: $secondary-font-color-light;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  .resourcesLi{
+    color: $secondary-font-color-light;
+  }
+}
+
 @media screen and (min-width: $mobile-media) {
   .navBurger{
     display: none;
+  }
+}
+
+
+html[mobile-mode='true'] {
+  .navBurger{
+    display: block;
   }
 }

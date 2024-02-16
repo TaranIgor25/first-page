@@ -126,3 +126,29 @@ html[dark-theme="false"] {
   }
 }
 
+html[mobile-mode='true'] {
+  .mainFooter {
+    flex-direction: column;
+  }
+
+  .footerColumnsWrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 32px 0px;
+  }
+
+  .footerFooter {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+
+  .ulSocialLinks {
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+
+  .cruipCom{
+    margin-top: 8px;
+  }
+}

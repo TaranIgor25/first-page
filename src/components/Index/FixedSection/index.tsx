@@ -4,7 +4,7 @@ import { ExitIcon } from "./ExitIcon";
 
 import style from "./fixedSection.module.scss";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useClickOutside } from "../../../hoocks/useClickOutside";
+import { useClickOutside } from "../useClickOutside";
 
 const dropDownArr = [
   "Home",
@@ -52,10 +52,10 @@ export const FixedSection = () => {
               </a>
             </div>
             <div className={style.centerBlock}>
-              <div onClick={() => setMobileMode(false)} className={style.computerBtn}>
+              <div onClick={() => setMobileMode(false)} className={mobileMode === false ? style.activeClass : style.computerBtn}>
                 <ComputerIcon />
               </div>
-              <div onClick={() => setMobileMode(true)} className={style.tabletBtn}>
+              <div onClick={() => setMobileMode(true)} className={mobileMode  === true ? style.activeClass : style.tabletBtn}>
                 <TabletIcon />
               </div>
             </div>

@@ -1,6 +1,6 @@
 import style from '../FirstSection/footer.module.scss';
 import { useEffect, useRef, useState } from "react";
-import { observer } from '../../../hoocks/observer';
+import { observer } from '../observer';
 
 const contents = [
   { 

@@ -223,3 +223,50 @@ html[dark-theme="false"] {
     padding-left: 0px;
   }
 }
+
+
+html[mobile-mode='true'] {
+  .firstSectionWrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  .h1FirstSection {
+    font-size: 56px;
+  }
+
+  .leftBlock {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .ulFirstSection {
+    text-align: left;
+  }
+
+  .inputBlock {
+    flex-wrap: wrap;
+    max-width: 384px;
+  }
+
+  .inputPhone{
+    margin-bottom: 8px;
+    margin-right: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .requestCodeBtn{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .rightBlockWrap {
+    padding-left: 0px;
+  }
+}

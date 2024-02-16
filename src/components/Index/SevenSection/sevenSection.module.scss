@@ -213,7 +213,7 @@ input.inputPhone::placeholder {
 }
 
 
-@media screen and (max-width: $tablet-media) {
+@media screen and (max-width: $mobile-media) {
   .h2SevenSection {
     font-size: $font-size-media;
   }
@@ -261,4 +261,49 @@ input.inputPhone::placeholder {
     height: 100%;
     box-sizing: border-box;
   }
+}
+
+
+html[mobile-mode='true'] {
+  .formWrap{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .inputBlockFooter{
+    width: 100%;
+  }
+
+  .headerForm {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 24px;
+  }
+
+  .sevenSectionMain{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .h2SevenSection {
+    font-size: $font-size-media;
+  }
+
+  .sevenSectionWrap {
+    padding: 48px 24px;
+  }
+
+  .sevenSectionHeader {
+    padding-bottom: 48px;
+  }
+  
+  .sevenSectionMain{
+    margin-bottom: 48px;
+    max-width: none;
+  }
+
+  .sevenSectionMain{
+    gap: 16px
+  }
+
 }
