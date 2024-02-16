@@ -68,13 +68,13 @@ html[dark-theme="false"] {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $tablet-media) {
   .divWrap{
     gap: 16px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile-media) {
   .divWrap{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -86,3 +86,6 @@ html[dark-theme="false"] {
     padding-bottom: 40px;
   }
 }
+
+
+

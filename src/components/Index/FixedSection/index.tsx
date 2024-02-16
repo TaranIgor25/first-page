@@ -3,7 +3,7 @@ import { ComputerIcon } from "./ComputerIcon";
 import { ExitIcon } from "./ExitIcon";
 
 import style from "./fixedSection.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useClickOutside } from "../../../hoocks/useClickOutside";
 
 const dropDownArr = [
@@ -20,11 +20,16 @@ const dropDownArr = [
 export const FixedSection = () => {
   const [visibleSection, setVisibleSection] = useState(true);
   const [dropDown, setDropDown] = useState<boolean>();
+  const [mobileMode, setMobileMode] = useState<boolean>(false);
   const refDropDown = useRef<any>();
 
   useClickOutside(refDropDown, dropDown, () => {
     setDropDown(!dropDown);
   })
+
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute("mobile-mode", `${mobileMode}`);
+  }, [mobileMode]);
 
   const dropDownListRender = dropDownArr.map((page, i) => (
     <li key={i} className={style.dropDownLi}>
@@ -47,10 +52,10 @@ export const FixedSection = () => {
               </a>
             </div>
             <div className={style.centerBlock}>
-              <div className={style.computerBtn}>
+              <div onClick={() => setMobileMode(false)} className={style.computerBtn}>
                 <ComputerIcon />
               </div>
-              <div className={style.tabletBtn}>
+              <div onClick={() => setMobileMode(true)} className={style.tabletBtn}>
                 <TabletIcon />
               </div>
             </div>

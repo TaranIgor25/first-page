@@ -162,6 +162,16 @@ html[dark-theme="false"] {
   }
 }
 
+// $darkMode: false;
+
+// @if $darkMode == true {
+//   @if $darkMode == false {
+//     .playImg {
+//       opacity: 0;
+//     }
+//   }
+// }
+
 @media screen and (max-width: $tablet-media) {
   .h1FirstSection {
     font-size: 64px;
@@ -178,7 +188,6 @@ html[dark-theme="false"] {
 
   .h1FirstSection {
     font-size: 56px;
-    margin: 0px;
   }
 
   .leftBlock {

@@ -1,8 +1,14 @@
-import { useRef, useState, useEffect, useContext, useLayoutEffect } from "react";
+import {
+  useRef,
+  useState,
+  useEffect,
+  useContext,
+  useLayoutEffect,
+} from "react";
 import BurgerMenu from "./BurgerMenu";
 
 import style from "./header.module.scss";
-import { useClickOutside } from "../../../hoocks/useClickOutside";;
+import { useClickOutside } from "../../../hoocks/useClickOutside";
 
 const whiteTheme = {
   left: "0px",
@@ -13,27 +19,43 @@ const darkTheme = {
   left: "20px",
 };
 
+const getLocalTheme = () => {
+  if (localStorage.getItem("dark-theme") === "false") {
+    return { 
+      boolean: false, 
+      objectTheme: whiteTheme 
+    };
+  } else {
+    return {
+      boolean: true,
+      objectTheme: darkTheme,
+    };
+  }
+};
+
 export const Header = () => {
-  const [toggleTheme, setToggleTheme] = useState<boolean>(false);
-  const [themeStyle, setThemeStyle] = useState<object>(darkTheme);
+  const [toggleTheme, setToggleTheme] = useState<boolean>(getLocalTheme().boolean);
+  const [themeStyle, setThemeStyle] = useState<object>(getLocalTheme().objectTheme);
+
   const [openCloseBurger, setOpenCloseBurger] = useState<boolean>(false);
   const burgerRef = useRef<any>(null);
 
   useLayoutEffect(() => {
-    document.documentElement.setAttribute('dark-theme', `${toggleTheme}`);
-  }, [toggleTheme])
+    document.documentElement.setAttribute("dark-theme", `${toggleTheme}`);
+    localStorage.setItem("dark-theme", `${toggleTheme}`);
+  }, [toggleTheme]);
 
   const setTheme = () => {
     setToggleTheme(!toggleTheme);
-    if (toggleTheme === true) {
-      setThemeStyle(whiteTheme);
-    } else {
+    if (themeStyle === whiteTheme) {
       setThemeStyle(darkTheme);
+    } else {
+      setThemeStyle(whiteTheme);
     }
   };
 
   useClickOutside(burgerRef, openCloseBurger, () => {
-      setOpenCloseBurger(false);
+    setOpenCloseBurger(false);
   });
 
   return (
@@ -74,12 +96,16 @@ export const Header = () => {
             </div>
             <div
               onClick={() => setOpenCloseBurger(!openCloseBurger)}
-              className={style.burgerBtn + ' ' + (openCloseBurger ? style.burgerBtnActive: '')}
-            > 
+              className={
+                style.burgerBtn +
+                " " +
+                (openCloseBurger ? style.burgerBtnActive : "")
+              }
+            >
               <span className={style.burgerSpan}></span>
             </div>
           </div>
-          {openCloseBurger && <BurgerMenu/>}
+          {openCloseBurger && <BurgerMenu />}
         </div>
       </div>
     </header>

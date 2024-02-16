@@ -2,7 +2,6 @@
 @import "../../../styles/animation.scss";
 
 .modalSection {
-  margin: -44px 0px 0px -24px;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -10,6 +9,8 @@
   z-index: 24;
   animation: up 0.15s forwards;
   opacity: 0;
+  margin: 0 auto;
+  margin-top: -44px;
 }
 
 .modal {

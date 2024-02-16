@@ -152,6 +152,11 @@ html[dark-theme="false"] {
   .liNav:hover {
     color: $main-font-color-light;
   }
+
+  .burgerSpan, .burgerBtn:before,
+  .burgerBtn:after {
+    background-color: $main-font-color-light;
+  }
 }
 
 @media screen and (max-width: $mobile-media) {
@@ -208,7 +213,3 @@ html[dark-theme="false"] {
     transform: scale(0);
   }
 }
-
-
-
-
