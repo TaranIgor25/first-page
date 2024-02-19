@@ -113,7 +113,7 @@ html[dark-theme="false"] {
   .footerFooter {
     display: flex;
     flex-direction: column-reverse;
-    align-items: start;
+    align-items: flex-start;
   }
 
   .ulSocialLinks {
@@ -140,7 +140,7 @@ html[mobile-mode='true'] {
   .footerFooter {
     display: flex;
     flex-direction: column-reverse;
-    align-items: start;
+    align-items: flex-start;
   }
 
   .ulSocialLinks {

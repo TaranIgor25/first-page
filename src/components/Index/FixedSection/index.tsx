@@ -1,9 +1,9 @@
-import { TabletIcon } from "./TabletIcon";
-import { ComputerIcon } from "./ComputerIcon";
-import { ExitIcon } from "./ExitIcon";
+import { TabletIcon } from "./img/TabletIcon";
+import { ComputerIcon } from "./img/ComputerIcon";
+import { ExitIcon } from "./img/ExitIcon";
 
 import style from "./fixedSection.module.scss";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { useClickOutside } from "../../../hoocks/useClickOutside";
 
 const dropDownArr = [
@@ -18,21 +18,21 @@ const dropDownArr = [
 ];
 
 export const FixedSection = () => {
-  const [visibleSection, setVisibleSection] = useState(true);
+  const [visibleSection, setVisibleSection] = useState<boolean>(true);
   const [dropDown, setDropDown] = useState<boolean>();
   const [mobileMode, setMobileMode] = useState<boolean>(false);
-  const refDropDown = useRef<any>();
+  const refDropDown = useRef<HTMLDivElement>(null);
 
   const closeSection = () => {
     setVisibleSection(false);
     if (mobileMode === true) {
       setMobileMode(false);
     }
-  }
+  };
 
   useClickOutside(refDropDown, dropDown, () => {
     setDropDown(!dropDown);
-  })
+  });
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute("mobile-mode", `${mobileMode}`);
@@ -40,7 +40,7 @@ export const FixedSection = () => {
 
   const dropDownListRender = dropDownArr.map((page, i) => (
     <li key={i} className={style.dropDownLi}>
-      <a>{page}</a>
+      <a href="#1">{page}</a>
     </li>
   ));
 
@@ -50,7 +50,7 @@ export const FixedSection = () => {
         <section className={style.fixSection}>
           <div className={style.fixWrap}>
             <div className={style.logoBlock}>
-              <a href="" className={style.linkCruip}>
+              <a href="#1" className={style.linkCruip}>
                 <img
                   src="./img/logoFixSection.svg"
                   alt="logo"
@@ -59,10 +59,20 @@ export const FixedSection = () => {
               </a>
             </div>
             <div className={style.centerBlock}>
-              <div onClick={() => setMobileMode(false)} className={mobileMode === false ? style.activeClass : style.computerBtn}>
+              <div
+                onClick={() => setMobileMode(false)}
+                className={
+                  mobileMode === false ? style.activeClass : style.computerBtn
+                }
+              >
                 <ComputerIcon />
               </div>
-              <div onClick={() => setMobileMode(true)} className={mobileMode  === true ? style.activeClass : style.tabletBtn}>
+              <div
+                onClick={() => setMobileMode(true)}
+                className={
+                  mobileMode === true ? style.activeClass : style.tabletBtn
+                }
+              >
                 <TabletIcon />
               </div>
             </div>
@@ -88,10 +98,7 @@ export const FixedSection = () => {
               <button className={style.buyNow}>
                 <span>Buy Now - $49</span>
               </button>
-              <a
-                onClick={closeSection}
-                className={style.closeBtn}
-              >
+              <a href="#1" onClick={closeSection} className={style.closeBtn}>
                 <ExitIcon />
               </a>
             </div>

@@ -22,9 +22,9 @@ const colorBlocksArr = [
 ];
 
 export const SevenSection = () => {
-  const animElement = useRef<any>(null);
+  const animElement = useRef<HTMLDivElement | null>(null);
   const [startAnimation, setStartAnimation] = useState(false);
-  
+
   useEffect(() => {
     observer([animElement.current], setStartAnimation);
   }, []);

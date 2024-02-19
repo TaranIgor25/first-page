@@ -3,8 +3,8 @@ import style from "./fiveSection.module.scss";
 import { observer } from "../observer";
 
 export const FiveSection = () => {
-  const animElement = useRef<any>(null);
-  const [startAnimation, setStartAnimation] = useState(false);
+  const animElement = useRef<HTMLDivElement>(null);
+  const [startAnimation, setStartAnimation] = useState<boolean>(false);
 
   useEffect(() => {
     observer([animElement.current], setStartAnimation);
@@ -73,7 +73,7 @@ export const FiveSection = () => {
         </div>
       </div>
       <div className={style.goPremiumBtn}>
-        <a href="#" className={`${style.goPremiumLink}  ${block.btnClass}`}>
+        <a href="#1" className={`${style.goPremiumLink}  ${block.btnClass}`}>
           Go Premium
         </a>
       </div>

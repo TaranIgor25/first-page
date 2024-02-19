@@ -18,9 +18,8 @@ export const SecondarySection = () => {
   const [runSwipe, setRunSwipe] = useState<number>(0);
   const [transitionDuration, setTransitionDuration] = useState<number>(0);
 
-  const [infinitySwipe, setInfinitySwipe] = useState(swipesArr);
-  const [activeClass, setActiveClass] = useState(7);
-  const [allowSwipe, setAllowSwipe] = useState(true);
+  const [activeClass, setActiveClass] = useState<number>(7);
+  const [allowSwipe, setAllowSwipe] = useState<boolean>(true);
 
   const rightSwipe = () => {
     if (allowSwipe) {
@@ -64,10 +63,10 @@ export const SecondarySection = () => {
     }, 5000);
     return () => {
       clearInterval(interval);
-    }
-  }, [runSwipe]);
+    };
+  }, [runSwipe, activeClass]);
 
-  const swipesRender = infinitySwipe.map((swipe: any, iSwipe: any) => (
+  const swipesRender = swipesArr.map((swipe: any, iSwipe: any) => (
     <div key={iSwipe} className={style.swipe}>
       <img
         src={swipe.imgSwipe}
@@ -77,11 +76,11 @@ export const SecondarySection = () => {
       />
       {activeClass === iSwipe && (
         <div className={style.btnWrap}>
-          <div className={style.learnMoreBtn}>
-            <a>Learn more</a>
-          </div>
+          <div className={style.learnMoreBtn}>Learn more</div>
           <div className={style.creativeServices}>
-            <a className={style.creativeServicesLink}>Creative Services</a>
+            <a href="#1" className={style.creativeServicesLink}>
+              Creative Services
+            </a>
           </div>
         </div>
       )}

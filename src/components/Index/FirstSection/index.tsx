@@ -3,7 +3,7 @@ import ModalVideo from "../ModalVideo";
 
 import style from "./firstSection.module.scss";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 const listContent = [
   "Lorem ipsum is placeholder text commonly.",
@@ -65,15 +65,18 @@ export const FirstSection = ({ children }: Props) => {
             <img
               src="./img/mockup-image-01.jpg"
               className={style.intoMobileImg}
+              alt="background"
             ></img>
             <img
               src="./img/iphone-mockup.png"
               className={style.mobileImg}
+              alt="iphone"
             ></img>
             <img
               onClick={() => setOpenModal(true)}
               src="./img/play-button.svg"
               className={style.playImg}
+              alt="play button"
             ></img>
           </div>
         </div>

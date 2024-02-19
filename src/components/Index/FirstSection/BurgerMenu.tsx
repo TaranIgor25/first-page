@@ -1,13 +1,9 @@
-import { Ref, RefObject } from "react";
 import style from "./burgerMenu.module.scss";
 
 export const BurgerMenu = () => {
-
   return (
     <>
-      <nav
-        className={style.navBurger}
-      >
+      <nav className={style.navBurger}>
         <div className={style.burgerWrap}>
           <div className={style.logo}></div>
           <ul className={style.burgerUl}>

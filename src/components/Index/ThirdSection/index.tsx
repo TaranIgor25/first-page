@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import style from "./thirdSection.module.scss";
 import Video from "./Video";
-import { videoObj, startVideoObj } from "./videoObj";
+import { videoObj, startVideoObj, IVideoBlock } from "./videoObj";
 import ModalVideo from "../ModalVideo";
 import { useClicker } from "../../../hoocks/useClicker";
 
@@ -29,7 +29,7 @@ export const ThirdSection = () => {
     },
   ];
 
-  const [renderObj, setRenderObj] = useState(startVideoObj);
+  const [renderObj, setRenderObj] = useState<IVideoBlock[]>(startVideoObj);
   const [highlightBtn, setHighlightBtn] = useState<number>(0);
 
   const [openModal, setOpenModal] = useState<boolean>();
@@ -38,7 +38,7 @@ export const ThirdSection = () => {
   useClicker(refModal, openModal, setOpenModal);
 
   const reRenderObj = (btnNumber: number) => {
-    const newObjArr: any = [];
+    const newObjArr: IVideoBlock[] = [];
     videoObj.map((el) => {
       if (
         el.category.firstCategory === `${btnNumber + 1}` ||
@@ -47,12 +47,17 @@ export const ThirdSection = () => {
         newObjArr.push(el);
         setRenderObj(newObjArr);
       }
+      return newObjArr;
     });
     setHighlightBtn(btnNumber);
   };
 
   const videoRender = renderObj.map((video, i) => (
-    <Video key={i} video={renderObj[i]} setter={() => setOpenModal(true)}></Video>
+    <Video
+      key={i}
+      video={renderObj[i]}
+      setter={() => setOpenModal(true)}
+    ></Video>
   ));
 
   const liListRender = liArr.map((li, i) => (

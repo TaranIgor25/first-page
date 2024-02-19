@@ -1,10 +1,4 @@
-import {
-  useRef,
-  useState,
-  useEffect,
-  useContext,
-  useLayoutEffect,
-} from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import BurgerMenu from "./BurgerMenu";
 
 import style from "./header.module.scss";
@@ -21,9 +15,9 @@ const darkTheme = {
 
 const getLocalTheme = () => {
   if (localStorage.getItem("dark-theme") === "false") {
-    return { 
-      boolean: false, 
-      objectTheme: whiteTheme 
+    return {
+      boolean: false,
+      objectTheme: whiteTheme,
     };
   } else {
     return {
@@ -34,11 +28,15 @@ const getLocalTheme = () => {
 };
 
 export const Header = () => {
-  const [toggleTheme, setToggleTheme] = useState<boolean>(getLocalTheme().boolean);
-  const [themeStyle, setThemeStyle] = useState<object>(getLocalTheme().objectTheme);
+  const [toggleTheme, setToggleTheme] = useState<boolean>(
+    getLocalTheme().boolean
+  );
+  const [themeStyle, setThemeStyle] = useState<object>(
+    getLocalTheme().objectTheme
+  );
 
   const [openCloseBurger, setOpenCloseBurger] = useState<boolean>(false);
-  const burgerRef = useRef<any>(null);
+  const burgerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute("dark-theme", `${toggleTheme}`);
@@ -75,6 +73,7 @@ export const Header = () => {
                   <img
                     className={style.dropDownArrow}
                     src="./img/drop-down-arrow.svg"
+                    alt="arrow"
                   ></img>
                   <ul className={style.headerDropDown}>
                     <li className={style.dropDownHelp}>Help center</li>
@@ -91,9 +90,7 @@ export const Header = () => {
                 <div className={style.togglerTheme} style={themeStyle}></div>
               </div>
             </div>
-            <div className={style.btnRequest}>
-              <a className={style.requestLink}>Request code</a>
-            </div>
+            <div className={style.btnRequest}>Request code</div>
             <div
               onClick={() => setOpenCloseBurger(!openCloseBurger)}
               className={
