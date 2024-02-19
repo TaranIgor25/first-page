@@ -4,7 +4,7 @@ import { ExitIcon } from "./ExitIcon";
 
 import style from "./fixedSection.module.scss";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useClickOutside } from "../useClickOutside";
+import { useClickOutside } from "../../../hoocks/useClickOutside";
 
 const dropDownArr = [
   "Home",
@@ -22,6 +22,13 @@ export const FixedSection = () => {
   const [dropDown, setDropDown] = useState<boolean>();
   const [mobileMode, setMobileMode] = useState<boolean>(false);
   const refDropDown = useRef<any>();
+
+  const closeSection = () => {
+    setVisibleSection(false);
+    if (mobileMode === true) {
+      setMobileMode(false);
+    }
+  }
 
   useClickOutside(refDropDown, dropDown, () => {
     setDropDown(!dropDown);
@@ -82,7 +89,7 @@ export const FixedSection = () => {
                 <span>Buy Now - $49</span>
               </button>
               <a
-                onClick={() => setVisibleSection(false)}
+                onClick={closeSection}
                 className={style.closeBtn}
               >
                 <ExitIcon />

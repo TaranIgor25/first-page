@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import style from "./thirdSection.module.scss";
 import Video from "./Video";
 import { videoObj, startVideoObj } from "./videoObj";
+import ModalVideo from "../ModalVideo";
+import { useClicker } from "../../../hoocks/useClicker";
 
 export const ThirdSection = () => {
   const liArr = [
@@ -30,6 +32,11 @@ export const ThirdSection = () => {
   const [renderObj, setRenderObj] = useState(startVideoObj);
   const [highlightBtn, setHighlightBtn] = useState<number>(0);
 
+  const [openModal, setOpenModal] = useState<boolean>();
+  const refModal = useRef<HTMLElement>(null);
+
+  useClicker(refModal, openModal, setOpenModal);
+
   const reRenderObj = (btnNumber: number) => {
     const newObjArr: any = [];
     videoObj.map((el) => {
@@ -45,14 +52,18 @@ export const ThirdSection = () => {
   };
 
   const videoRender = renderObj.map((video, i) => (
-    <Video key={i} video={renderObj[i]}></Video>
+    <Video key={i} video={renderObj[i]} setter={() => setOpenModal(true)}></Video>
   ));
 
   const liListRender = liArr.map((li, i) => (
     <button
       onClick={() => reRenderObj(i)}
       key={i}
-      className={style.leftBlockBtn + ' ' + (highlightBtn === i ? (style.btnOnClick) : (style.btnHover)) }
+      className={
+        style.leftBlockBtn +
+        " " +
+        (highlightBtn === i ? style.btnOnClick : style.btnHover)
+      }
     >
       <img src={li.img} alt="icon" className={style.svgThirdSection} />
       <span className={style.intoBtnSpan}>{li.text}</span>
@@ -62,6 +73,7 @@ export const ThirdSection = () => {
   return (
     <>
       <section className={style.thirdSection}>
+        {openModal && <ModalVideo videoRef={refModal} />}
         <div className={style.thirdSectionWrap}>
           <div className={style.ThirdSectionBlocks}>
             <div className={style.textBlock}>

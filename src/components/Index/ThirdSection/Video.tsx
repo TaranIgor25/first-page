@@ -2,9 +2,11 @@ import { IVideoBlock } from "./videoObj";
 import { videoObj } from "./videoObj";
 
 import style from "./thirdSection.module.scss";
+import { useCallback } from "react";
 
 interface VideoProps {
   video: IVideoBlock;
+  setter: any;
 }
 
 export const Video = (props: VideoProps) => {
@@ -19,7 +21,7 @@ export const Video = (props: VideoProps) => {
           ></img>
           <div className={style.contentVideoBlock}>
             <div className={style.startVideo}>
-              <a href={props.video.category.firstCategory}>
+              <a onClick={props.setter}>
                 <img
                   src="./img/play-button.svg"
                   alt="play button"
@@ -28,7 +30,7 @@ export const Video = (props: VideoProps) => {
               </a>
             </div>
             <div className={style.videoDescription}>
-              <a href="#0" className={style.videoName}>
+              <a href="#" className={style.videoName}>
                 {props.video.name}
               </a>
               <div className={style.videTime}>{props.video.time}</div>

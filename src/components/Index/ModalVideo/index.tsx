@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import style from "../ModalVideo/modalVideo.module.scss";
 
 export const ModalVideo = ({videoRef} : any) => {
-
   return (
     <>
       <section className={style.modalSection}>

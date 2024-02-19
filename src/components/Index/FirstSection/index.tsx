@@ -1,3 +1,4 @@
+import { useClicker } from "../../../hoocks/useClicker";
 import ModalVideo from "../ModalVideo";
 
 import style from "./firstSection.module.scss";
@@ -10,17 +11,15 @@ const listContent = [
   "Lorem ipsum is placeholder text commonly.",
 ];
 
-export const FirstSection = ({ children }: any) => {
-  const [openModal, setOpenModal]: any = useState();
-  const refModal = useRef(null);
+type Props = {
+  children: React.ReactNode
+}
 
-  useEffect(() => {
-    document.addEventListener("click", (e) => {
-      if (e.target === refModal.current) {
-        setOpenModal(false);
-      }
-    });
-  }, []);
+export const FirstSection = ({ children }: Props) => {
+  const [openModal, setOpenModal] = useState<boolean>();
+  const refModal = useRef<HTMLElement>(null);
+
+  useClicker(refModal, openModal, setOpenModal);
 
   const listItemRender = listContent.map((content, i) => (
     <li key={i} className={style.firstSectionLi}>
