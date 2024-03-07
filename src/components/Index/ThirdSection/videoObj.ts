@@ -1,11 +1,4 @@
-export interface IVideoBlock { 
-  name: string,
-  time: string,
-  category: {
-    firstCategory: string,
-    secondCategory?: string,
-  }
-};
+import { IVideoBlock } from "../../store/models"
 
 export const videoObj: IVideoBlock [] = 
 [    

@@ -8,7 +8,6 @@ export const observer = (targets : any, startAnim: any) => {
   let callback : IntersectionObserverCallback = (entries, observer) => {
     entries.forEach((entry) => {
       if(entry.isIntersecting) {
-        console.log('yes');
         startAnim(true);
       }
     })

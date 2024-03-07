@@ -1,9 +1,12 @@
-import { useClicker } from "../../../hoocks/useClicker";
 import ModalVideo from "../ModalVideo";
+import Popup from "../Popup";
+import FormWithInput from "../FormWithInput";
 
 import style from "./firstSection.module.scss";
 
 import { useState, useRef } from "react";
+import { useActions } from "../../../hoocks/useActions";
+import { useClicker } from "../../../hoocks/useClicker";
 
 const listContent = [
   "Lorem ipsum is placeholder text commonly.",
@@ -12,12 +15,12 @@ const listContent = [
 ];
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export const FirstSection = ({ children }: Props) => {
   const [openModal, setOpenModal] = useState<boolean>();
-  const refModal = useRef<HTMLElement>(null);
+  const refModal = useRef<React.RefObject<HTMLElement | null>>(null);
 
   useClicker(refModal, openModal, setOpenModal);
 
@@ -33,9 +36,10 @@ export const FirstSection = ({ children }: Props) => {
   ));
 
   return (
-    <section className={style.firstSection}>
+    <section id="1" className={style.firstSection}>
       {openModal && <ModalVideo videoRef={refModal} />}
       {children}
+      <Popup />
       <div className={style.firstSectionWrap}>
         <div className={style.leftBlock}>
           <h1 className={style.h1FirstSection}>Your website, reimagined</h1>
@@ -44,14 +48,10 @@ export const FirstSection = ({ children }: Props) => {
             set it up once, and get beautiful results forever.
           </p>
           <div className={style.inputBlock}>
-            <input
-              id="1"
-              name="phone number"
-              type="phone"
-              placeholder="Phone number"
-              className={style.inputPhone}
-            />
-            <div className={style.requestCodeBtn}>Request code</div>
+            <FormWithInput
+              inputClass={style.inputPhone}
+              btnClass={style.requestCodeBtn}
+            ></FormWithInput>
           </div>
           <ul className={style.ulFirstSection}>{listItemRender}</ul>
         </div>

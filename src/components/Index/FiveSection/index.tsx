@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
 import style from "./fiveSection.module.scss";
+
+import { useEffect, useRef, useState } from "react";
 import { observer } from "../observer";
 
 export const FiveSection = () => {

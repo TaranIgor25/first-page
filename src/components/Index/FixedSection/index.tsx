@@ -3,8 +3,11 @@ import { ComputerIcon } from "./img/ComputerIcon";
 import { ExitIcon } from "./img/ExitIcon";
 
 import style from "./fixedSection.module.scss";
-import { useLayoutEffect, useRef, useState } from "react";
+
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useClickOutside } from "../../../hoocks/useClickOutside";
+import { useActions } from "../../../hoocks/useActions";
+import { useAppSelector } from "../../../hoocks/tsHoocks";
 
 const dropDownArr = [
   "Home",
@@ -23,12 +26,21 @@ export const FixedSection = () => {
   const [mobileMode, setMobileMode] = useState<boolean>(false);
   const refDropDown = useRef<HTMLDivElement>(null);
 
-  const closeSection = () => {
+  const { closeSection } = useActions();
+  const { close } = useAppSelector((state) => state);
+
+  const closeFixedSection = () => {
     setVisibleSection(false);
     if (mobileMode === true) {
       setMobileMode(false);
     }
   };
+
+  useEffect(() => {
+    if (close === false) {
+      closeFixedSection();
+    }
+  }, [close]);
 
   useClickOutside(refDropDown, dropDown, () => {
     setDropDown(!dropDown);
@@ -98,7 +110,11 @@ export const FixedSection = () => {
               <button className={style.buyNow}>
                 <span>Buy Now - $49</span>
               </button>
-              <a href="#1" onClick={closeSection} className={style.closeBtn}>
+              <a
+                href="#1"
+                onClick={() => closeSection("close")}
+                className={style.closeBtn}
+              >
                 <ExitIcon />
               </a>
             </div>

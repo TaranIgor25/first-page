@@ -1,12 +1,14 @@
-import { useRef, useState } from "react";
 import style from "./thirdSection.module.scss";
-import Video from "./Video";
-import { videoObj, startVideoObj, IVideoBlock } from "./videoObj";
 import ModalVideo from "../ModalVideo";
-import { useClicker } from "../../../hoocks/useClicker";
+import Video from "./Video";
 
-export const ThirdSection = () => {
-  const liArr = [
+import { useRef, useState } from "react";
+import { videoObj, startVideoObj } from "./videoObj";
+import { useClicker } from "../../../hoocks/useClicker";
+import { IThirdSectionLiArr, IVideoBlock } from "../../store/models";
+
+export const ThirdSection  = () => {
+  const liArr : IThirdSectionLiArr[] = [
     {
       text: "Getting Started",
       img: "./img/thirdSection1.svg",
@@ -31,7 +33,6 @@ export const ThirdSection = () => {
 
   const [renderObj, setRenderObj] = useState<IVideoBlock[]>(startVideoObj);
   const [highlightBtn, setHighlightBtn] = useState<number>(0);
-
   const [openModal, setOpenModal] = useState<boolean>();
   const refModal = useRef<HTMLElement>(null);
 

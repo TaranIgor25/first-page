@@ -1,30 +1,35 @@
+import { useEffect, useState } from "react";
 import style from "./sixSection.module.scss";
+import { useGetContentQuery } from "../../store/beckEndApi";
+import { ICommentArr, IUser } from "../../store/models";
+
+const commentArr: ICommentArr[] = [
+  {
+    img: "./img/testimonial-01.jpg",
+    name: "—Andy Croll",
+    link: "Appy.com",
+  },
+  {
+    img: "./img/testimonial-02.jpg",
+    name: "—Patricia Lepisov",
+    link: "Nobi Bank",
+  },
+  {
+    img: "./img/testimonial-03.jpg",
+    name: "—Zhenya Ritz",
+    link: "Sync",
+  },
+  {
+    img: "./img/testimonial-04.jpg",
+    name: "—Lisa Champ",
+    link: "Appicu",
+  },
+];
 
 export const SixSection = () => {
-  const contentArr = [
-    {
-      img: "./img/testimonial-01.jpg",
-      name: "—Andy Croll",
-      link: "Appy.com",
-    },
-    {
-      img: "./img/testimonial-02.jpg",
-      name: "—Patricia Lepisov",
-      link: "Nobi Bank",
-    },
-    {
-      img: "./img/testimonial-03.jpg",
-      name: "—Zhenya Ritz",
-      link: "Sync",
-    },
-    {
-      img: "./img/testimonial-04.jpg",
-      name: "—Lisa Champ",
-      link: "Appicu",
-    },
-  ];
+  const { isError, isLoading, data } = useGetContentQuery("");
 
-  const contentRender = contentArr.map((person, i) => (
+  const contentRender = data?.map((person: IUser, i: number) => (
     <div key={i} className={style.reviewsBlock}>
       <div className={style.imgsReviews}>
         <img src={person.img} alt="face" className={style.faceImgReviews} />
@@ -52,7 +57,11 @@ export const SixSection = () => {
     <>
       <section className={style.sixSection}>
         <div className={style.sixSectionWrap}>
-          <div className={style.sixSectionBlocks}>{contentRender}</div>
+          {data && (
+            <div className={style.sixSectionBlocks}>{contentRender}</div>
+          )}
+          {isError && <div>Ошибка пути</div>}
+          {isLoading && <div>Loading...</div>}
         </div>
       </section>
     </>

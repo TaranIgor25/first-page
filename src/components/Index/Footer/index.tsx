@@ -1,7 +1,9 @@
+import { iColumnContent } from "../../store/models";
 import style from "./footer.module.scss";
 
 export const Footer = () => {
-  const columnContent = [
+
+  const columnContent : iColumnContent[] = [
     {
       name: "products",
       content: ["Drag And Drop", "Visual Studio X", "Easy Content"],
@@ -37,7 +39,7 @@ export const Footer = () => {
     },
   ];
 
-  const socialIconImg = [
+  const socialIconImg : string[] = [
     "./img/x.svg",
     "./img/discord.svg",
     "./img/facebook.svg",

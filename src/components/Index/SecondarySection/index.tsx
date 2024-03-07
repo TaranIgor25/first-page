@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import style from "./secondarySection.module.scss";
+import { ISwipesArr } from "../../store/models";
 
 const runLength = 536;
 const transition = 300;
 
-let swipesArr = [
+let swipesArr: ISwipesArr[] = [
   { imgSwipe: "./img/carousel-item-01.jpg" },
   { imgSwipe: "./img/carousel-item-02.jpg" },
   { imgSwipe: "./img/carousel-item-03.jpg" },

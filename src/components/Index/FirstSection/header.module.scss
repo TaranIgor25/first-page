@@ -106,6 +106,15 @@
   transition-duration: .15s;
 }
 
+.sentCodeBtn {
+  cursor: auto;
+  background-color: $secondary-font-color !important;
+}
+
+.sentCodeBtn:hover {
+  background-color: $secondary-font-color !important;
+}
+
 .headerDropDown {
   position: absolute;
   list-style-type: none;

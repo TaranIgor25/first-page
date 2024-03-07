@@ -1,8 +1,15 @@
-import { useRef, useState, useLayoutEffect } from "react";
-import BurgerMenu from "./BurgerMenu";
-
 import style from "./header.module.scss";
+import {
+  useRef,
+  useState,
+  useLayoutEffect,
+  useEffect,
+  MutableRefObject,
+} from "react";
 import { useClickOutside } from "../../../hoocks/useClickOutside";
+import { useAppSelector } from "../../../hoocks/tsHoocks";
+
+import BurgerMenu from "./BurgerMenu";
 
 const whiteTheme = {
   left: "0px",
@@ -28,15 +35,16 @@ const getLocalTheme = () => {
 };
 
 export const Header = () => {
+  const [disabledRequestBtn, setDisabledRequestBtn] = useState<boolean>(false);
   const [toggleTheme, setToggleTheme] = useState<boolean>(
     getLocalTheme().boolean
   );
   const [themeStyle, setThemeStyle] = useState<object>(
     getLocalTheme().objectTheme
   );
-
   const [openCloseBurger, setOpenCloseBurger] = useState<boolean>(false);
   const burgerRef = useRef<HTMLDivElement>(null);
+  const { open } = useAppSelector((state) => state);
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute("dark-theme", `${toggleTheme}`);
@@ -55,6 +63,10 @@ export const Header = () => {
   useClickOutside(burgerRef, openCloseBurger, () => {
     setOpenCloseBurger(false);
   });
+
+  useEffect(() => {
+    setDisabledRequestBtn(!disabledRequestBtn);
+  }, [open]);
 
   return (
     <header>
@@ -90,7 +102,15 @@ export const Header = () => {
                 <div className={style.togglerTheme} style={themeStyle}></div>
               </div>
             </div>
-            <div className={style.btnRequest}>Request code</div>
+            <div
+              className={
+                disabledRequestBtn
+                  ? style.btnRequest
+                  : `${style.btnRequest} ${style.sentCodeBtn}`
+              }
+            >
+              {disabledRequestBtn ? "Request code" : "Code sent"}
+            </div>
             <div
               onClick={() => setOpenCloseBurger(!openCloseBurger)}
               className={

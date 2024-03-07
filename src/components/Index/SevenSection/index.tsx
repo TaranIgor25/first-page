@@ -1,8 +1,10 @@
 import style from "./sevenSection.module.scss";
 import { observer } from "../observer";
 import { useEffect, useRef, useState } from "react";
+import FormWithInput from "../FormWithInput";
+import { IColorBlockArr } from "../../store/models";
 
-const colorBlocksArr = [
+const colorBlocksArr: IColorBlockArr[] = [
   {
     class: style.colorBlock + " " + style.colorBlockGreen,
     img: "./img/seven-section1.svg",
@@ -23,7 +25,7 @@ const colorBlocksArr = [
 
 export const SevenSection = () => {
   const animElement = useRef<HTMLDivElement | null>(null);
-  const [startAnimation, setStartAnimation] = useState(false);
+  const [startAnimation, setStartAnimation] = useState<Boolean>(false);
 
   useEffect(() => {
     observer([animElement.current], setStartAnimation);
@@ -74,14 +76,10 @@ export const SevenSection = () => {
                 <div
                   className={`${style.inputBlock} ${style.inputBlockFooter}`}
                 >
-                  <input
-                    id="2"
-                    name="phone number"
-                    placeholder="Phone number"
-                    type="tel"
-                    className={style.inputPhone}
-                  />
-                  <div className={style.requestCodeBtn}>Request code</div>
+                  <FormWithInput
+                    inputClass={style.inputPhone}
+                    btnClass={style.requestCodeBtn}
+                  ></FormWithInput>
                 </div>
               </div>
             </div>

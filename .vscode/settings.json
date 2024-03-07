@@ -1,3 +1,10 @@
 {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "window.zoomLevel": 2,
+    "window.zoomPerWindow": false,
+    "editor.fontSize": 13,
+    "editor.cursorStyle": "line",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.fontFamily": "JetBrains Mono ExtraLight",
+    "editor.codeLensFontFamily": "JetBrains Mono"
 }

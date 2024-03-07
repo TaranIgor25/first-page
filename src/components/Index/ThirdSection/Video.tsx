@@ -1,8 +1,7 @@
-import { IVideoBlock } from "./videoObj";
-import { videoObj } from "./videoObj";
-
 import style from "./thirdSection.module.scss";
-import { useCallback } from "react";
+
+import { IVideoBlock } from "../../store/models";
+import { videoObj } from "./videoObj";
 
 interface VideoProps {
   video: IVideoBlock;
