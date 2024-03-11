@@ -1,3 +1,13 @@
+import { store } from "../components/store";
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export interface VideoProps {
+  video: IVideoBlock;
+  setter: any;
+}
+
 export interface IVideoBlock { 
   name: string,
   time: string,
@@ -7,7 +17,16 @@ export interface IVideoBlock {
   }
 };
 
-export interface ServResponse {
+export interface IPremiumBlock {
+  name: string,
+  price: number,
+  sale?: string,
+  animationClass: string,
+  borderClass?: string,
+  btnClass?: string,
+}
+
+export interface IServerResponse {
   data: IUser[];
 }
 
@@ -26,13 +45,14 @@ export interface iColumnContent {
 export interface IInputProps {
   inputClass: string;
   btnClass: string;
+  formId: string;
 }
 
-export interface ISwipesArr {
+export interface ISwipes {
   imgSwipe : string,
 }
 
-export interface IColorBlockArr {
+export interface IColorBlock {
   class: string,
   img: string,
 }
@@ -43,7 +63,7 @@ export interface ICommentArr {
   link: string,
 }
 
-export interface IThirdSectionLiArr {
+export interface IThirdSectionBtnArr {
   text: string,
   img: string,
 }

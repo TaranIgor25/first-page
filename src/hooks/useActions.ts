@@ -1,9 +1,9 @@
-import { bindActionCreators } from "@reduxjs/toolkit";
 import { useMemo } from "react";
-import { useDispatch } from "react-redux";
+import { bindActionCreators } from "@reduxjs/toolkit";
+
 import { actions as closeSectionActions } from "../components/store/slices/closeSection.slice";
 import { actions as openPopupActions } from "../components/store/slices/openPopup.slice";
-import { useAppDispatch } from "./tsHoocks";
+import { useAppDispatch } from "./tsHooks";
 
 const rootActions = {
   ...closeSectionActions, ...openPopupActions

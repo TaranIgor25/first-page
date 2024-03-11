@@ -1,40 +1,43 @@
-import style from "./thirdSection.module.scss";
+import { useRef, useState } from "react";
+
 import ModalVideo from "../ModalVideo";
 import Video from "./Video";
 
-import { useRef, useState } from "react";
 import { videoObj, startVideoObj } from "./videoObj";
-import { useClicker } from "../../../hoocks/useClicker";
-import { IThirdSectionLiArr, IVideoBlock } from "../../store/models";
+import { useClicker } from "../../../hooks/useClicker";
+import { IThirdSectionBtnArr, IVideoBlock } from "../../../types/interfaces";
 
-export const ThirdSection  = () => {
-  const liArr : IThirdSectionLiArr[] = [
-    {
-      text: "Getting Started",
-      img: "./img/thirdSection1.svg",
-    },
-    {
-      text: "Collection list",
-      img: "./img/thirdSection2.svg",
-    },
-    {
-      text: "Element Hierarchy",
-      img: "./img/thirdSection3.svg",
-    },
-    {
-      text: "Styling Basics",
-      img: "./img/thirdSection4.svg",
-    },
-    {
-      text: "Image Fiel",
-      img: "./img/thirdSection5.svg",
-    },
-  ];
+import style from "./thirdSection.module.scss";
+
+const btnArr: IThirdSectionBtnArr[] = [
+  {
+    text: "Getting Started",
+    img: "./img/thirdSection1.svg",
+  },
+  {
+    text: "Collection list",
+    img: "./img/thirdSection2.svg",
+  },
+  {
+    text: "Element Hierarchy",
+    img: "./img/thirdSection3.svg",
+  },
+  {
+    text: "Styling Basics",
+    img: "./img/thirdSection4.svg",
+  },
+  {
+    text: "Image Fiel",
+    img: "./img/thirdSection5.svg",
+  },
+];
+
+export const ThirdSection = () => {
+  const refModal = useRef<HTMLDivElement | null>(null);
 
   const [renderObj, setRenderObj] = useState<IVideoBlock[]>(startVideoObj);
   const [highlightBtn, setHighlightBtn] = useState<number>(0);
   const [openModal, setOpenModal] = useState<boolean>();
-  const refModal = useRef<HTMLElement>(null);
 
   useClicker(refModal, openModal, setOpenModal);
 
@@ -53,26 +56,26 @@ export const ThirdSection  = () => {
     setHighlightBtn(btnNumber);
   };
 
-  const videoRender = renderObj.map((video, i) => (
+  const videoRender = renderObj.map((video, index) => (
     <Video
-      key={i}
-      video={renderObj[i]}
+      key={video.name}
+      video={renderObj[index]}
       setter={() => setOpenModal(true)}
     ></Video>
   ));
 
-  const liListRender = liArr.map((li, i) => (
+  const btnListRender = btnArr.map((btn, index) => (
     <button
-      onClick={() => reRenderObj(i)}
-      key={i}
+      onClick={() => reRenderObj(index)}
+      key={index}
       className={
         style.leftBlockBtn +
         " " +
-        (highlightBtn === i ? style.btnOnClick : style.btnHover)
+        (highlightBtn === index ? style.btnOnClick : style.btnHover)
       }
     >
-      <img src={li.img} alt="icon" className={style.svgThirdSection} />
-      <span className={style.intoBtnSpan}>{li.text}</span>
+      <img src={btn.img} alt="icon" className={style.svgThirdSection} />
+      <span className={style.intoBtnSpan}>{btn.text}</span>
     </button>
   ));
 
@@ -94,7 +97,7 @@ export const ThirdSection  = () => {
             </div>
             <div className={style.contentBloc}>
               <div className={style.contentBlockWrap}>
-                <div className={style.leftBlockSort}>{liListRender}</div>
+                <div className={style.leftBlockSort}>{btnListRender}</div>
                 <div className={style.rightBlockVideo}>{videoRender}</div>
               </div>
             </div>

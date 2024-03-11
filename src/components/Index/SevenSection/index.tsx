@@ -1,10 +1,12 @@
-import style from "./sevenSection.module.scss";
-import { observer } from "../observer";
 import { useEffect, useRef, useState } from "react";
-import FormWithInput from "../FormWithInput";
-import { IColorBlockArr } from "../../store/models";
 
-const colorBlocksArr: IColorBlockArr[] = [
+import { observer } from "../../../helper/observer";
+import { IColorBlock} from "../../../types/interfaces";
+import FormWithInput from "../FormWithInput";
+
+import style from "./sevenSection.module.scss";
+
+const colorBlocksArr: IColorBlock[] = [
   {
     class: style.colorBlock + " " + style.colorBlockGreen,
     img: "./img/seven-section1.svg",
@@ -25,14 +27,15 @@ const colorBlocksArr: IColorBlockArr[] = [
 
 export const SevenSection = () => {
   const animElement = useRef<HTMLDivElement | null>(null);
-  const [startAnimation, setStartAnimation] = useState<Boolean>(false);
+
+  const [startAnimation, setStartAnimation] = useState<boolean>(false);
 
   useEffect(() => {
     observer([animElement.current], setStartAnimation);
   }, []);
 
-  const colorBlocksRender = colorBlocksArr.map((block, i) => (
-    <div key={i} className={block.class}>
+  const colorBlocksRender = colorBlocksArr.map((block : IColorBlock) => (
+    <div key={block.img} className={block.class}>
       <img src={block.img} alt="icon" className={style.colorBlockSvgTop} />
       <div className={style.colorBlockName}>Simpler Sharing</div>
       <div className={style.colorBlockDescription}>
@@ -79,6 +82,7 @@ export const SevenSection = () => {
                   <FormWithInput
                     inputClass={style.inputPhone}
                     btnClass={style.requestCodeBtn}
+                    formId={'2'}
                   ></FormWithInput>
                 </div>
               </div>

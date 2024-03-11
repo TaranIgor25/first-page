@@ -1,6 +1,8 @@
-import style from "../FirstSection/footer.module.scss";
 import { useEffect, useRef, useState } from "react";
-import { observer } from "../observer";
+
+import { observer } from "../../../helper/observer";
+
+import style from "../FirstSection/footer.module.scss";
 
 const contents = [
   {
@@ -22,15 +24,16 @@ const contents = [
 ];
 
 export const FirstSectionFooter = () => {
-  const animElement = useRef<HTMLElement>(null);
+  const animElement = useRef<HTMLDivElement>(null);
+
   const [startAnimation, setStartAnimation] = useState<boolean>(false);
 
   useEffect(() => {
     observer([animElement.current], setStartAnimation);
   }, []);
 
-  const divBlock = contents.map((content, i) => (
-    <div key={i} className={`${content.styleBlock} ${style.blocks}`}>
+  const divBlock = contents.map((content) => (
+    <div key={content.text} className={`${content.styleBlock} ${style.blocks}`}>
       <div className={style.numbers}>{content.text}</div>
       <div className={style.descriptions}>Days turn around</div>
     </div>

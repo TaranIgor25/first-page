@@ -12,7 +12,6 @@ export async function fetchRequest (finalUrl, method, body) {
       headers: headers,
     })
     const responseJson = await response.json();
-    console.log(responseJson.data);
     return responseJson.data;
   }
   catch (error) {

@@ -1,29 +1,53 @@
+import { useEffect, useRef, useState } from "react";
+
+import { observer } from "../../../helper/observer";
+import { IPremiumBlock } from "../../../types/interfaces";
+
 import style from "./fiveSection.module.scss";
 
-import { useEffect, useRef, useState } from "react";
-import { observer } from "../observer";
+const premiumBlockArr: IPremiumBlock[] = [
+  {
+    name: "Yearly",
+    price: 27,
+    sale: "-40%",
+    animationClass: style.firstBlock,
+    borderClass: style.borderPlan,
+    btnClass: style.goPremiumFirst,
+  },
+  {
+    name: "Monthly",
+    price: 47,
+    animationClass: style.secondBlock,
+  },
+  {
+    name: "Lifetime",
+    price: 127,
+    animationClass: style.thirdBlock,
+  },
+];
+
+const contentArr = [
+  "Unlimited domains",
+  "Unlimited web pages",
+  "Conversion analytics",
+  "A/B testing",
+  "Exclusive channels",
+  "Free resources",
+  "Landing page builder",
+  "Smart forms and reports",
+];
 
 export const FiveSection = () => {
   const animElement = useRef<HTMLDivElement>(null);
+
   const [startAnimation, setStartAnimation] = useState<boolean>(false);
 
   useEffect(() => {
     observer([animElement.current], setStartAnimation);
   }, []);
 
-  const contentArr = [
-    "Unlimited domains",
-    "Unlimited web pages",
-    "Conversion analytics",
-    "A/B testing",
-    "Exclusive channels",
-    "Free resources",
-    "Landing page builder",
-    "Smart forms and reports",
-  ];
-
-  const listLiRender = contentArr.map((content, i) => (
-    <li key={i} className={style.planLi}>
+  const listLiRender = contentArr.map((content) => (
+    <li key={content} className={style.planLi}>
       <img
         src="./img/check-mark.svg"
         alt="check mark"
@@ -33,30 +57,9 @@ export const FiveSection = () => {
     </li>
   ));
 
-  const premiumBlockArr = [
-    {
-      name: "Yearly",
-      price: 27,
-      sale: "-40%",
-      animationClass: style.firstBlock,
-      borderClass: style.borderPlan,
-      btnClass: style.goPremiumFirst,
-    },
-    {
-      name: "Monthly",
-      price: 47,
-      animationClass: style.secondBlock,
-    },
-    {
-      name: "Lifetime",
-      price: 127,
-      animationClass: style.thirdBlock,
-    },
-  ];
-
-  const premiumBlocksRender = premiumBlockArr.map((block, i) => (
+  const premiumBlocksRender = premiumBlockArr.map((block) => (
     <div
-      key={i}
+      key={block.name}
       className={`${style.premiumPlan} ${block.borderClass} ${block.animationClass}`}
     >
       <div className={style.premiumPlanWrap}>

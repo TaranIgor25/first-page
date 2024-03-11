@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import Router from './router';
-
-import './styles/global.scss';
 import { Provider } from 'react-redux';
 import { store } from './components/store';
+
+import './styles/global.scss';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,9 +13,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
-    {/* <React.StrictMode> */}
+    <React.StrictMode>
       <Router />
-    {/* </React.StrictMode>  */}
+    </React.StrictMode>
   </Provider>
 );
 

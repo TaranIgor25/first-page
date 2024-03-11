@@ -1,17 +1,17 @@
+import { useState, useRef } from "react";
+
+import { useClicker } from "../../../hooks/useClicker";
+
 import ModalVideo from "../ModalVideo";
 import Popup from "../Popup";
 import FormWithInput from "../FormWithInput";
 
 import style from "./firstSection.module.scss";
 
-import { useState, useRef } from "react";
-import { useActions } from "../../../hoocks/useActions";
-import { useClicker } from "../../../hoocks/useClicker";
-
 const listContent = [
   "Lorem ipsum is placeholder text commonly.",
   "Excepteur sint occaecat cupidatat.",
-  "Lorem ipsum is placeholder text commonly.",
+  "Lorem ipsum is text commonly.",
 ];
 
 type Props = {
@@ -19,13 +19,13 @@ type Props = {
 };
 
 export const FirstSection = ({ children }: Props) => {
+  const refModal = useRef<HTMLDivElement | null>(null);
   const [openModal, setOpenModal] = useState<boolean>();
-  const refModal = useRef<React.RefObject<HTMLElement | null>>(null);
 
   useClicker(refModal, openModal, setOpenModal);
 
-  const listItemRender = listContent.map((content, i) => (
-    <li key={i} className={style.firstSectionLi}>
+  const listItemRender = listContent.map((content) => (
+    <li key={content} className={style.firstSectionLi}>
       <img
         src="./img/check-mark.svg"
         alt="check mark"
@@ -51,6 +51,7 @@ export const FirstSection = ({ children }: Props) => {
             <FormWithInput
               inputClass={style.inputPhone}
               btnClass={style.requestCodeBtn}
+              formId={'1'}
             ></FormWithInput>
           </div>
           <ul className={style.ulFirstSection}>{listItemRender}</ul>

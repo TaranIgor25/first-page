@@ -1,12 +1,7 @@
-import style from "./thirdSection.module.scss";
-
-import { IVideoBlock } from "../../store/models";
+import { IVideoBlock, VideoProps } from "../../../types/interfaces";
 import { videoObj } from "./videoObj";
 
-interface VideoProps {
-  video: IVideoBlock;
-  setter: any;
-}
+import style from "./thirdSection.module.scss";
 
 export const Video = (props: VideoProps) => {
   return (

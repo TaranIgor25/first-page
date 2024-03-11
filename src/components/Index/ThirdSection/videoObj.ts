@@ -1,4 +1,4 @@
-import { IVideoBlock } from "../../store/models"
+import { IVideoBlock } from "../../../types/interfaces"
 
 export const videoObj: IVideoBlock [] = 
 [    

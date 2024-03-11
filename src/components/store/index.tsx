@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { googleSheetsApi } from "./beckEndApi";
+import { googleSheetsApi } from "./backEndApi";
 import { reducer as closeSectionReducer } from "./slices/closeSection.slice";
 import { reducer as openPopupReducer } from "./slices/openPopup.slice";
 
@@ -16,5 +16,3 @@ export const store = configureStore({
   devTools: true,
 })
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;

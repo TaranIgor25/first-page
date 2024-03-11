@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { IUser, ServResponse } from './models';
+import { IUser, IServerResponse } from '../../types/interfaces';
 
 export const googleSheetsApi = createApi({
   reducerPath: 'googleSheet/Img',
@@ -11,7 +11,7 @@ export const googleSheetsApi = createApi({
       query: (endUrl: string) => ({
         url: `SixSectionContent/${endUrl}`,
       }),
-      transformResponse: (response : ServResponse) => response.data
+      transformResponse: (response : IServerResponse) => response.data
     })
   })
 })

@@ -1,19 +1,23 @@
 import React, { useEffect, useRef, useState } from "react";
+
+import { useClicker } from "../../../hooks/useClicker";
+import { useAppSelector } from "../../../hooks/tsHooks";
 import ExitIcon from "./ExitIcon";
+
 import style from "./popup.module.scss";
-import { useClicker } from "../../../hoocks/useClicker";
-import { useAppSelector } from "../../../hoocks/tsHoocks";
 
 export const Popup = () => {
-  const [openPopup, setOpenPopup] = useState<boolean>(false);
-  const popupRef = useRef<HTMLDivElement>(null);
-  const { open } = useAppSelector((state) => state);
+  const popupRef = useRef<HTMLDivElement | null>(null);
+
+  const [openPopup, setOpenPopup] = useState<boolean>();
+
+  const open  = useAppSelector((state) => state.open);
 
   useClicker(popupRef, openPopup, setOpenPopup);
 
   useEffect(() => {
     if (open === true) {
-      setOpenPopup(!openPopup);
+      setOpenPopup(true);
     }
   }, [open]);
 

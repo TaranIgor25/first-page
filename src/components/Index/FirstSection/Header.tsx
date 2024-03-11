@@ -1,15 +1,16 @@
-import style from "./header.module.scss";
 import {
   useRef,
   useState,
   useLayoutEffect,
   useEffect,
-  MutableRefObject,
 } from "react";
-import { useClickOutside } from "../../../hoocks/useClickOutside";
-import { useAppSelector } from "../../../hoocks/tsHoocks";
+
+import { useClickOutside } from "../../../hooks/useClickOutside";
+import { useAppSelector } from "../../../hooks/tsHooks";
 
 import BurgerMenu from "./BurgerMenu";
+
+import style from "./header.module.scss";
 
 const whiteTheme = {
   left: "0px",
@@ -35,6 +36,8 @@ const getLocalTheme = () => {
 };
 
 export const Header = () => {
+  const burgerRef = useRef<HTMLDivElement>(null);
+
   const [disabledRequestBtn, setDisabledRequestBtn] = useState<boolean>(false);
   const [toggleTheme, setToggleTheme] = useState<boolean>(
     getLocalTheme().boolean
@@ -43,8 +46,8 @@ export const Header = () => {
     getLocalTheme().objectTheme
   );
   const [openCloseBurger, setOpenCloseBurger] = useState<boolean>(false);
-  const burgerRef = useRef<HTMLDivElement>(null);
-  const { open } = useAppSelector((state) => state);
+
+  const open  = useAppSelector((state) => state.open);
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute("dark-theme", `${toggleTheme}`);
@@ -65,7 +68,7 @@ export const Header = () => {
   });
 
   useEffect(() => {
-    setDisabledRequestBtn(!disabledRequestBtn);
+    setDisabledRequestBtn(disabledRequestBtn => !disabledRequestBtn);
   }, [open]);
 
   return (
@@ -104,12 +107,12 @@ export const Header = () => {
             </div>
             <div
               className={
-                disabledRequestBtn
+                disabledRequestBtn === false
                   ? style.btnRequest
                   : `${style.btnRequest} ${style.sentCodeBtn}`
               }
             >
-              {disabledRequestBtn ? "Request code" : "Code sent"}
+              {disabledRequestBtn === false ? "Request code" : "Code sent"}
             </div>
             <div
               onClick={() => setOpenCloseBurger(!openCloseBurger)}

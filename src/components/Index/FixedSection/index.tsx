@@ -1,13 +1,14 @@
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+
+import { useClickOutside } from "../../../hooks/useClickOutside";
+import { useActions } from "../../../hooks/useActions";
+import { useAppSelector } from "../../../hooks/tsHooks";
+
 import { TabletIcon } from "./img/TabletIcon";
 import { ComputerIcon } from "./img/ComputerIcon";
 import { ExitIcon } from "./img/ExitIcon";
 
 import style from "./fixedSection.module.scss";
-
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useClickOutside } from "../../../hoocks/useClickOutside";
-import { useActions } from "../../../hoocks/useActions";
-import { useAppSelector } from "../../../hoocks/tsHoocks";
 
 const dropDownArr = [
   "Home",
@@ -21,26 +22,23 @@ const dropDownArr = [
 ];
 
 export const FixedSection = () => {
+  const refDropDown = useRef<HTMLDivElement>(null);
+
   const [visibleSection, setVisibleSection] = useState<boolean>(true);
   const [dropDown, setDropDown] = useState<boolean>();
   const [mobileMode, setMobileMode] = useState<boolean>(false);
-  const refDropDown = useRef<HTMLDivElement>(null);
 
   const { closeSection } = useActions();
-  const { close } = useAppSelector((state) => state);
-
-  const closeFixedSection = () => {
-    setVisibleSection(false);
-    if (mobileMode === true) {
-      setMobileMode(false);
-    }
-  };
+  const close  = useAppSelector((state) => state.close);
 
   useEffect(() => {
     if (close === false) {
-      closeFixedSection();
+      setVisibleSection(false);
+      if (mobileMode === true) {
+        setMobileMode(false);
+      }
     }
-  }, [close]);
+  }, [close, mobileMode]);
 
   useClickOutside(refDropDown, dropDown, () => {
     setDropDown(!dropDown);
@@ -50,8 +48,8 @@ export const FixedSection = () => {
     document.documentElement.setAttribute("mobile-mode", `${mobileMode}`);
   }, [mobileMode]);
 
-  const dropDownListRender = dropDownArr.map((page, i) => (
-    <li key={i} className={style.dropDownLi}>
+  const dropDownListRender = dropDownArr.map((page) => (
+    <li key={page} className={style.dropDownLi}>
       <a href="#1">{page}</a>
     </li>
   ));

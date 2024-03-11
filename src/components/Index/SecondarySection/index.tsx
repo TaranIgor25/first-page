@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
+
+import { ISwipes } from "../../../types/interfaces";
+
 import style from "./secondarySection.module.scss";
-import { ISwipesArr } from "../../store/models";
 
 const runLength = 536;
 const transition = 300;
+const delay = 400;
+const resetCarouselLength = 2680;
 
-let swipesArr: ISwipesArr[] = [
+let swipesArr: ISwipes[] = [
   { imgSwipe: "./img/carousel-item-01.jpg" },
   { imgSwipe: "./img/carousel-item-02.jpg" },
   { imgSwipe: "./img/carousel-item-03.jpg" },
@@ -18,7 +22,6 @@ swipesArr = [...swipesArr, ...swipesArr, ...swipesArr];
 export const SecondarySection = () => {
   const [runSwipe, setRunSwipe] = useState<number>(0);
   const [transitionDuration, setTransitionDuration] = useState<number>(0);
-
   const [activeClass, setActiveClass] = useState<number>(7);
   const [allowSwipe, setAllowSwipe] = useState<boolean>(true);
 
@@ -30,7 +33,7 @@ export const SecondarySection = () => {
       setRunSwipe(runSwipe - runLength);
       setTimeout(() => {
         setAllowSwipe(true);
-      }, 300);
+      }, delay);
     }
   };
 
@@ -42,13 +45,13 @@ export const SecondarySection = () => {
       setAllowSwipe(false);
       setTimeout(() => {
         setAllowSwipe(true);
-      }, 300);
+      }, delay);
     }
   };
 
   useEffect(() => {
     setTimeout(() => {
-      if (runSwipe === -2680 || runSwipe === 2680) {
+      if (runSwipe === -resetCarouselLength || runSwipe === resetCarouselLength) {
         setRunSwipe(0);
         setTransitionDuration(0);
         setActiveClass(7);
@@ -67,15 +70,15 @@ export const SecondarySection = () => {
     };
   }, [runSwipe, activeClass]);
 
-  const swipesRender = swipesArr.map((swipe: any, iSwipe: any) => (
-    <div key={iSwipe} className={style.swipe}>
+  const swipesRender = swipesArr.map((swipe: ISwipes, index: number) => (
+    <div key={index} className={style.swipe}>
       <img
         src={swipe.imgSwipe}
         alt=""
         className={style.slideImg}
-        style={activeClass === iSwipe ? { opacity: 1 } : { opacity: 0.32 }}
+        style={activeClass === index ? { opacity: 1 } : { opacity: 0.32 }}
       />
-      {activeClass === iSwipe && (
+      {activeClass === index && (
         <div className={style.btnWrap}>
           <div className={style.learnMoreBtn}>Learn more</div>
           <div className={style.creativeServices}>

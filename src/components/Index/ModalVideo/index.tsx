@@ -1,7 +1,10 @@
-import React, { RefObject } from "react";
 import style from "../ModalVideo/modalVideo.module.scss";
 
-export const ModalVideo = ({ videoRef }: any) => {
+type Props = {
+  videoRef: React.RefObject<HTMLDivElement>;
+};
+
+export const ModalVideo = ({ videoRef }: Props) => {
   return (
     <>
       <section className={style.modalSection}>
