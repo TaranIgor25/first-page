@@ -47,7 +47,7 @@ export const Header = () => {
   );
   const [openCloseBurger, setOpenCloseBurger] = useState<boolean>(false);
 
-  const open  = useAppSelector((state) => state.open);
+  const open  = useAppSelector((state) => state.open)
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute("dark-theme", `${toggleTheme}`);
