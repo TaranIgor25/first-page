@@ -1,9 +1,4 @@
-import {
-  useRef,
-  useState,
-  useLayoutEffect,
-  useEffect,
-} from "react";
+import { useRef, useState, useLayoutEffect, useEffect } from "react";
 
 import { useClickOutside } from "../../../hooks/useClickOutside";
 import { useAppSelector } from "../../../hooks/tsHooks";
@@ -47,7 +42,7 @@ export const Header = () => {
   );
   const [openCloseBurger, setOpenCloseBurger] = useState<boolean>(false);
 
-  const open  = useAppSelector((state) => state.open)
+  const open = useAppSelector((state) => state.open);
 
   useLayoutEffect(() => {
     document.documentElement.setAttribute("dark-theme", `${toggleTheme}`);
@@ -68,7 +63,9 @@ export const Header = () => {
   });
 
   useEffect(() => {
-    setDisabledRequestBtn(disabledRequestBtn => !disabledRequestBtn);
+    if (open === true) {
+      setDisabledRequestBtn((disabledRequestBtn) => !disabledRequestBtn);
+    }
   }, [open]);
 
   return (
