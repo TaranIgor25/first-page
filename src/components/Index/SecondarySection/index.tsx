@@ -82,7 +82,7 @@ export const SecondarySection = () => {
         <div className={style.btnWrap}>
           <div className={style.learnMoreBtn}>Learn more</div>
           <div className={style.creativeServices}>
-            <a href="#1" className={style.creativeServicesLink}>
+            <a href="##" className={style.creativeServicesLink}>
               Creative Services
             </a>
           </div>

@@ -46,7 +46,7 @@ export const SixSection = () => {
       <div className={style.descriptionReviews}>
         <cite className={style.citeReviews}>{person.name}</cite>
         ,&ensp;
-        <a href="#0" className={style.linkReviews}>
+        <a href="##" className={style.linkReviews}>
           {person.link}
         </a>
       </div>

@@ -77,7 +77,7 @@ export const FiveSection = () => {
         </div>
       </div>
       <div className={style.goPremiumBtn}>
-        <a href="#1" className={`${style.goPremiumLink}  ${block.btnClass}`}>
+        <a href="##" className={`${style.goPremiumLink}  ${block.btnClass}`}>
           Go Premium
         </a>
       </div>

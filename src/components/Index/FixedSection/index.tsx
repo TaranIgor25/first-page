@@ -50,7 +50,7 @@ export const FixedSection = () => {
 
   const dropDownListRender = dropDownArr.map((page) => (
     <li key={page} className={style.dropDownLi}>
-      <a href="#1">{page}</a>
+      <a href="##">{page}</a>
     </li>
   ));
 
@@ -60,7 +60,7 @@ export const FixedSection = () => {
         <section className={style.fixSection}>
           <div className={style.fixWrap}>
             <div className={style.logoBlock}>
-              <a href="#1" className={style.linkCruip}>
+              <a href="##" className={style.linkCruip}>
                 <img
                   src="./img/logoFixSection.svg"
                   alt="logo"
@@ -109,7 +109,7 @@ export const FixedSection = () => {
                 <span>Buy Now - $49</span>
               </button>
               <a
-                href="#1"
+                href="##"
                 onClick={() => closeSection("close")}
                 className={style.closeBtn}
               >
