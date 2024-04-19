@@ -1,6 +1,7 @@
 {
   "name": "admin-react-ts",
   "version": "0.1.0",
+  "homepage": "https://taranigor25.github.io/first-page/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
