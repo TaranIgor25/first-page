@@ -1,5 +1,4 @@
-import { IVideoBlock, VideoProps } from "../../../types/interfaces";
-import { videoObj } from "./videoObj";
+import { VideoProps } from "../../../types/interfaces";
 
 import style from "./thirdSection.module.scss";
 
@@ -24,7 +23,7 @@ export const Video = (props: VideoProps) => {
               </a>
             </div>
             <div className={style.videoDescription}>
-              <a href="#" className={style.videoName}>
+              <a href="##" className={style.videoName}>
                 {props.video.name}
               </a>
               <div className={style.videTime}>{props.video.time}</div>
