@@ -22,8 +22,10 @@ export const FormWithInput: React.FC<IInputProps> = ({
   const open  = useAppSelector((state) => state.open);
 
   useEffect(() => {
-    setDisabledInput(disabledInput => !disabledInput);
-    setInputValue("");
+    if (open === true) {
+      setDisabledInput(disabledInput => !disabledInput);
+      setInputValue("");
+    }
   }, [open]);
 
   return (
