@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
-
+import { useRef, useState } from "react";
 import { ISwipes } from "../../../types/interfaces";
 
 import style from "./secondarySection.module.scss";
 
-const runLength = 536;
-const transition = 300;
-const delay = 400;
-const resetCarouselLength = 2680;
+import { SliderControls } from "./SliderControls";
 
 let swipesArr: ISwipes[] = [
   { imgSwipe: "./img/carousel-item-01.jpg" },
@@ -20,59 +16,15 @@ let swipesArr: ISwipes[] = [
 swipesArr = [...swipesArr, ...swipesArr, ...swipesArr];
 
 export const SecondarySection = () => {
+  const [activeClass, setActiveClass] = useState<number>(7);
   const [runSwipe, setRunSwipe] = useState<number>(0);
   const [transitionDuration, setTransitionDuration] = useState<number>(0);
-  const [activeClass, setActiveClass] = useState<number>(7);
-  const [allowSwipe, setAllowSwipe] = useState<boolean>(true);
-
-  const rightSwipe = () => {
-    if (allowSwipe) {
-      setTransitionDuration(transition);
-      setActiveClass(activeClass + 1);
-      setAllowSwipe(false);
-      setRunSwipe(runSwipe - runLength);
-      setTimeout(() => {
-        setAllowSwipe(true);
-      }, delay);
-    }
-  };
-
-  const leftSwipe = () => {
-    if (allowSwipe) {
-      setRunSwipe(runSwipe + runLength);
-      setTransitionDuration(transition);
-      setActiveClass(activeClass - 1);
-      setAllowSwipe(false);
-      setTimeout(() => {
-        setAllowSwipe(true);
-      }, delay);
-    }
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (runSwipe === -resetCarouselLength || runSwipe === resetCarouselLength) {
-        setRunSwipe(0);
-        setTransitionDuration(0);
-        setActiveClass(7);
-      }
-    }, transition);
-  });
-
-  useEffect(() => {
-    let interval = setInterval(() => {
-      setTransitionDuration(transition);
-      setActiveClass(activeClass + 1);
-      setRunSwipe(runSwipe - runLength);
-    }, 5000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [runSwipe, activeClass]);
+  const slideImgRef = useRef(null);
 
   const swipesRender = swipesArr.map((swipe: ISwipes, index: number) => (
     <div key={index} className={style.swipe}>
       <img
+        ref={slideImgRef}
         src={swipe.imgSwipe}
         alt=""
         className={style.slideImg}
@@ -115,18 +67,14 @@ export const SecondarySection = () => {
             {swipesRender}
           </div>
         </div>
-        <div className={style.sliderControlSection}>
-          <div className={style.sliderControlWrap}>
-            <div onClick={leftSwipe} className={style.sliderBtnLeft}>
-              <span className={style.leftBtn}></span>
-              <img src="./img/arrow.svg" alt="arrow" className={style.arrow} />
-            </div>
-            <div onClick={rightSwipe} className={style.sliderBtnRight}>
-              <span className={style.rightBtn}></span>
-              <img src="./img/arrow2.svg" alt="arrow" className={style.arrow} />
-            </div>
-          </div>
-        </div>
+        <SliderControls
+          slideImgRef={slideImgRef}
+          activeClass={activeClass}
+          setActiveClass={setActiveClass}
+          setTransitionDuration={setTransitionDuration}
+          setRunSwipe={setRunSwipe}
+          runSwipe={runSwipe}
+        ></SliderControls>
       </div>
     </section>
   );

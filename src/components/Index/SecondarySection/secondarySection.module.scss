@@ -154,11 +154,10 @@ html[dark-theme="false"] {
 
 @media screen and (max-width: $media-512) {
   .slideImg {
-    width: 100vw;
+    width: 330px;
     height: auto;
   }
 }
-
 
 html[mobile-mode='true'] {
   .h2SecondarySection{
