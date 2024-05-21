@@ -88,7 +88,7 @@ export const Header = () => {
                   Resources
                   <img
                     className={style.dropDownArrow}
-                    src="/img/drop-down-arrow.svg"
+                    src="./img/drop-down-arrow.svg"
                     alt="arrow"
                   ></img>
                   <ul className={style.headerDropDown}>

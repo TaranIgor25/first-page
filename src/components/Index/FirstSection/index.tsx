@@ -27,7 +27,7 @@ export const FirstSection = ({ children }: Props) => {
   const listItemRender = listContent.map((content) => (
     <li key={content} className={style.firstSectionLi}>
       <img
-        src="/img/check-mark.svg"
+        src="./img/check-mark.svg"
         alt="check mark"
         className={style.checkMark}
       />
@@ -60,22 +60,22 @@ export const FirstSection = ({ children }: Props) => {
           <div className={style.rightBlockWrap}>
             <img
               className={style.svgBackground}
-              src="/img/background-rays.svg"
+              src="./img/background-rays.svg"
               alt="rays"
             />
             <img
-              src="/img/mockup-image-01.jpg"
+              src="./img/mockup-image-01.jpg"
               className={style.intoMobileImg}
               alt="background"
             ></img>
             <img
-              src="/img/iphone-mockup.png"
+              src="./img/iphone-mockup.png"
               className={style.mobileImg}
               alt="iphone"
             ></img>
             <img
               onClick={() => setOpenModal(true)}
-              src="/img/play-button.svg"
+              src="./img/play-button.svg"
               className={style.playImg}
               alt="play button"
             ></img>
