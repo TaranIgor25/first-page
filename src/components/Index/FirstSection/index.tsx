@@ -2,9 +2,9 @@ import { useState, useRef } from "react";
 
 import { useClicker } from "../../../hooks/useClicker";
 
-import ModalVideo from "../ModalVideo";
-import Popup from "../Popup";
-import FormWithInput from "../FormWithInput";
+import ModalVideo from "../../Additional/ModalVideo";
+import Popup from "../../Additional/Popup";
+import FormWithInput from "../../Additional/FormWithInput";
 
 import style from "./firstSection.module.scss";
 
@@ -51,7 +51,7 @@ export const FirstSection = ({ children }: Props) => {
             <FormWithInput
               inputClass={style.inputPhone}
               btnClass={style.requestCodeBtn}
-              formId={'1'}
+              formId={"1"}
             ></FormWithInput>
           </div>
           <ul className={style.ulFirstSection}>{listItemRender}</ul>

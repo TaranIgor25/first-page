@@ -1,12 +1,60 @@
-import { store } from "../components/store";
+import {
+  FetchBaseQueryError,
+  FetchBaseQueryMeta,
+} from "@reduxjs/toolkit/query";
+import { store } from "../store";
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export type swipeDirection = "left" | "right";
 
-export interface VideoProps {
-  video: IVideoBlock;
-  setter: any;
+export interface IRequestBtnMessage {
+  firstName: string;
+  lastName: string;
+  company: string;
+  phoneNumber: string;
+  country: country;
+  details?: string;
+  role?: role;
+}
+
+export interface IData {
+  data: IRequestBtnMessage;
+}
+
+export interface IRequestBtnProps {
+  data: IRequestBtnMessage;
+  setData: React.Dispatch<React.SetStateAction<IRequestBtnMessage>>;
+  sendMessage: any;
+}
+
+export type country = "United States" | "United Kingdom" | "Germany";
+export type role = "CO-founder" | "Developer" | "Design / Marketing" | "Other";
+
+export interface IInputAppy {
+  data: IRequestBtnMessage;
+  setData: React.Dispatch<React.SetStateAction<IRequestBtnMessage>>;
+  label: string;
+  placeHolder: string;
+  required: boolean;
+  type?: string;
+  name: string;
+  dataKey: string;
+}
+
+export interface ISelectAppy {
+  optionArr: string[];
+  required: boolean;
+  label: string;
+  data: IRequestBtnMessage;
+  setData: React.Dispatch<React.SetStateAction<IRequestBtnMessage>>;
+  name: string;
+}
+
+export interface IFormPropsAppy {
+  data: IRequestBtnMessage;
+  setData: React.Dispatch<React.SetStateAction<IRequestBtnMessage>>;
+  name: string;
 }
 
 export interface ISliderProps {
@@ -50,6 +98,11 @@ export interface IUser {
 export interface iColumnContent {
   name: string;
   content: string[];
+}
+
+export interface VideoProps {
+  video: IVideoBlock;
+  setter: any;
 }
 
 export interface IInputProps {

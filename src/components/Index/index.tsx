@@ -1,17 +1,17 @@
-import Header from "./FirstSection/Header";
-import FirstSection from "./FirstSection/index";
-import FirstSectionFooter from "./FirstSection/Footer";
-import SecondarySection from "./SecondarySection";
-import ThirdSection from "./ThirdSection";
-import FourSection from "./FourSection";
-import FiveSection from "./FiveSection";
-import SixSection from "./SixSection";
-import SevenSection from "./SevenSection";
-import Footer from "./Footer";
+import FixedSection from "../Construction/FixedSection";
+import Header from "../Construction/Header/Header";
+import FirstSection from "../Index/FirstSection/index";
+import FirstSectionFooter from "../Index/FirstSection/Footer";
+import SecondarySection from "../Index/SecondarySection";
+import ThirdSection from "../Index/ThirdSection";
+import FourSection from "../Index/FourSection";
+import FiveSection from "../Index/FiveSection";
+import SixSection from "../Index/SixSection";
+import SevenSection from "../Index/SevenSection";
+import Footer from "../Construction/Footer";
 
 import "../../styles/normalize.css";
 import "../../styles/global.scss";
-import FixedSection from "./FixedSection";
 
 export const Index = () => {
   return (

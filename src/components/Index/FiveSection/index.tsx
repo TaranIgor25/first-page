@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-import { observer } from "../../../helper/observer";
 import { IPremiumBlock } from "../../../types/interfaces";
+import { observer } from "../../../helper/observer";
 
 import style from "./fiveSection.module.scss";
 

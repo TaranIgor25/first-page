@@ -1,14 +1,16 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, BrowserRouter } from "react-router-dom";
 
 import Index from "../pages/Index";
+import Appy from "../components/Appy";
 
 function Router() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Index />}></Route>
+        <Route path="/" element={<Index />}/>
+        <Route path="/appy" element={<Appy />}/>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

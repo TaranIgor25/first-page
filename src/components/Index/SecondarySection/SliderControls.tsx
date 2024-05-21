@@ -1,4 +1,5 @@
 import { ISliderProps, swipeDirection } from "../../../types/interfaces";
+
 import style from "./secondarySection.module.scss";
 
 import { useEffect, useState } from "react";
@@ -7,7 +8,7 @@ const transition = 300;
 const delay = 400;
 let slideImgWidth = 512;
 
-const checkslideImgWidth = () => {
+const checkSlideImgWidth = () => {
   if (slideImgWidth < 512) {
     return {
       runLength: 354,
@@ -30,7 +31,7 @@ export const SliderControls = ({
   slideImgRef,
 }: ISliderProps) => {
   const [allowSwipe, setAllowSwipe] = useState<boolean>(true);
-  const [carouselLength, setCarouselLength] = useState(checkslideImgWidth());
+  const [carouselLength, setCarouselLength] = useState(checkSlideImgWidth());
   slideImgWidth = slideImgRef.current?.width;
 
   const swipeSlide = (direction: swipeDirection) => {
@@ -51,7 +52,7 @@ export const SliderControls = ({
   };
 
   useEffect(() => {
-    setCarouselLength(checkslideImgWidth());
+    setCarouselLength(checkSlideImgWidth());
     setRunSwipe(0);
     setActiveClass(7);
   }, [slideImgWidth]);

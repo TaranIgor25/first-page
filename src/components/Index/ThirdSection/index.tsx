@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 
-import ModalVideo from "../ModalVideo";
+import ModalVideo from "../../Additional/ModalVideo";
 import Video from "./Video";
 
 import { videoObj, startVideoObj } from "./videoObj";
-import { useClicker } from "../../../hooks/useClicker";
+
 import { IThirdSectionBtnArr, IVideoBlock } from "../../../types/interfaces";
+import { useClicker } from "../../../hooks/useClicker";
 
 import style from "./thirdSection.module.scss";
 

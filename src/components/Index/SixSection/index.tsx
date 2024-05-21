@@ -1,5 +1,7 @@
-import { useGetContentQuery } from "../../store/backEndApi";
-import { /*ICommentArr*/ IUser } from "../../../types/interfaces";
+import Loader from "../../Additional/Loader/Loader";
+
+import { useGetContentQuery } from "../../../store/backEndApi";
+import { IUser } from "../../../types/interfaces";
 
 import style from "./sixSection.module.scss";
 
@@ -53,15 +55,9 @@ export const SixSection = () => {
     </div>
   ));
 
-  const requestRender = data ? (
-    <div className={style.sixSectionBlocks}>{contentRender}</div>
-  ) : isError ? (
-    <div>The request failed</div>
-  ) : isLoading ? (
-    <div>Loading...</div>
-  ) : (
-    ""
-  );
+  const requestRender = data ? ( <div className={style.sixSectionBlocks}>{contentRender}</div>) : 
+  isError ? ( <div>The request failed</div>) : 
+  isLoading ? ( <Loader />) : ( "");
 
   return (
     <>

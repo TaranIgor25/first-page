@@ -1,0 +1,91 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+@import "/src/styles/animation.scss";
+
+.navBurger{
+  display: block;
+  position: fixed;
+  background-color: $main-background-color;
+  z-index: 300;
+  max-width: 80%;
+  width: 320px;
+  height: 100vh;
+  margin-left: -24px; 
+  color: $third-font-color;
+  animation: burgerOpen 0.25s forwards;
+  opacity: 0;
+}
+
+.burgerWrap {
+  padding: 24px;
+}
+
+.logo{
+  width: 32px;
+  height: 32px;
+  background-image: url(../../../../public/img/logo.svg);
+  margin-bottom: 16px;
+}
+
+.burgerUl{
+  list-style-type: none;
+  padding: 0;
+}
+
+.resourcesUl{
+  list-style-type: none;
+  padding: 8px;
+}
+
+.burgerLi, .resourcesLi{
+  padding: 8px 8px;
+  font-size: 16px;
+}
+
+.resourcesLi{
+  color: $secondary-font-color;
+}
+
+.requestBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $btn-color;
+  color: $btn-font-color;
+  padding: 12px 32px;
+  flex-shrink: 0;
+  height: 22px;
+  cursor: pointer;
+}
+
+.borderBottom{
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-color: $border-color;
+  margin: 8px 0px;
+}
+
+html[dark-theme="false"] {
+  .navBurger{
+    background-color: $main-background-color-light;
+    color: $secondary-font-color-light;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  .resourcesLi{
+    color: $secondary-font-color-light;
+  }
+}
+
+@media screen and (min-width: $mobile-media) {
+  .navBurger{
+    display: none;
+  }
+}
+
+
+html[mobile-mode='true'] {
+  .navBurger{
+    display: block;
+  }
+}

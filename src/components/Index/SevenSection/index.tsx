@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
+import { IColorBlock } from "../../../types/interfaces";
 import { observer } from "../../../helper/observer";
-import { IColorBlock} from "../../../types/interfaces";
-import FormWithInput from "../FormWithInput";
+import FormWithInput from "../../Additional/FormWithInput";
 
 import style from "./sevenSection.module.scss";
 
@@ -34,7 +34,7 @@ export const SevenSection = () => {
     observer([animElement.current], setStartAnimation);
   }, []);
 
-  const colorBlocksRender = colorBlocksArr.map((block : IColorBlock) => (
+  const colorBlocksRender = colorBlocksArr.map((block: IColorBlock) => (
     <div key={block.img} className={block.class}>
       <img src={block.img} alt="icon" className={style.colorBlockSvgTop} />
       <div className={style.colorBlockName}>Simpler Sharing</div>
@@ -82,7 +82,7 @@ export const SevenSection = () => {
                   <FormWithInput
                     inputClass={style.inputPhone}
                     btnClass={style.requestCodeBtn}
-                    formId={'2'}
+                    formId={"2"}
                   ></FormWithInput>
                 </div>
               </div>

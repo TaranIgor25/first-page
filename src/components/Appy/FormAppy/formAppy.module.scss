@@ -1,0 +1,26 @@
+@import "/src/styles/variables";
+
+.selectWrap{
+  display: grid;
+  margin-bottom: 20px;
+}
+
+.formWrap{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 576px;
+}
+
+.nameWrap{
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+@media screen and (max-width: $mobile-media) {
+  .nameWrap{
+    flex-direction: column;
+    gap: 0;
+  }
+}

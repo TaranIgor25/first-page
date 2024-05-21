@@ -1,8 +1,8 @@
-@import "../../../styles/variables.scss";
-@import "../../../styles/mixins.scss";
+@import "/src/styles/variables";
+@import "/src/styles/mixins.scss";
 
 .thirdSection{
-  border-top: 1px solid $second-background-color;
+  @include sectionBorderTop;
 }
 
 .thirdSectionWrap{

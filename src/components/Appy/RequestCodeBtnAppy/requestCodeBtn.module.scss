@@ -1,0 +1,15 @@
+@import "/src/styles/variables";
+@import "/src/styles/mixins.scss";
+@import "/src/styles/animation.scss";
+
+.btnRequest{
+  @include requestCodeBtn;
+  margin: 0;
+  border: none;
+  height: 48px;
+}
+
+.btnRequest:hover {
+  background-color: $hover-btn-color;
+  transition-duration: .15s;
+}

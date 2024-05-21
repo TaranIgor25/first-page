@@ -1,0 +1,72 @@
+@import "/src/styles/variables.scss";
+
+.fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.legend{
+  font-weight: 500;
+  color: $main-font-color;
+  font-size: $font-size-14px;
+  margin-bottom: 12px;
+}
+
+.radioWrap{
+  margin-bottom: 8px;
+}
+
+.input{
+  position: relative;
+  height: 16px;
+  width: 16px;
+
+  margin-right: 12px;
+  background: $second-background-color;
+  border: 1px solid $secondary-font-color-light;
+  border-radius: 100%;
+  vertical-align: text-bottom;
+  appearance: none;
+}
+
+.input::before {
+  content: "";
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.input:checked::before {
+  display: flex;
+  justify-content: center;
+  border: 5px solid transparent;
+  border-radius: 100%;
+  background: $btn-color;
+  margin: 4px;
+}
+
+.input:focus {
+  outline: solid 1px $main-background-color-light;
+}
+
+
+html[dark-theme="false"] {
+  .legend{
+    color: $second-background-color-light;
+  }
+
+  .input{
+    background-color: $main-background-color-light;
+  }
+}
+
+
+
+

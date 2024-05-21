@@ -1,14 +1,14 @@
-@import "../../../styles/variables.scss";
-@import "../../../styles/mixins.scss";
-@import "../../../styles/animation.scss";
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+@import "/src/styles/animation.scss";
 
 .firstSectionFooterWrap{
   @include wrapper;
+  @include sectionBorderBottom;
   padding-top: 0px;
   display: flex;
   justify-content: center;
   padding-bottom: 5rem;
-  border-bottom: 1px solid $second-background-color;
 }
 
 .divWrap{

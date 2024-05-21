@@ -1,3 +1,11 @@
+@mixin sectionBorderTop {
+  border-top: 1px solid $second-background-color;
+}
+
+@mixin sectionBorderBottom {
+  border-bottom: 1px solid $second-background-color;
+}
+
 @mixin wrapper {
   max-width: $main-wight;
   margin: 0 auto;
@@ -8,4 +16,39 @@
   width: 768px;
   margin: 0 auto;
   max-width: 100%;
+}
+
+@mixin resetBtnSettings {
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+@mixin customInput {
+  min-width: 160px;
+  height: 22px;
+  padding: 12px 16px 12px 16px;
+  border: solid 1px rgb(82, 82, 90);
+  border-radius: 4px;
+  background-color: $second-background-color;
+  outline: none;
+  color: $main-font-color;
+}
+
+@mixin requestCodeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $btn-color;
+  color: $btn-font-color;
+  margin-left: 8px;
+  padding: 12px 32px;
+  flex-shrink: 0;
+  height: 22px;
+  font-family: $main-font-family;
+  cursor: pointer;
 }

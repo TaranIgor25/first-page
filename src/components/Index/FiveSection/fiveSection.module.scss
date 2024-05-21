@@ -1,10 +1,9 @@
-@import "../../../styles/variables.scss";
-@import "../../../styles/mixins.scss";
-@import "../../../styles/animation.scss";
+@import "/src/styles/variables";
+@import "/src/styles/mixins.scss";
+@import "/src/styles/animation.scss";
 
 .fiveSection {
-  border-top: solid 1px;
-  border-color: $second-background-color;
+  @include sectionBorderTop;
 }
 
 .fiveSectionWrap{

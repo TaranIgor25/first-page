@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { observer } from "../../../helper/observer";
 
-import style from "../FirstSection/footer.module.scss";
+import style from "./footer.module.scss";
 
 const contents = [
   {

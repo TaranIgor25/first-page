@@ -1,12 +1,11 @@
-@import "../../../styles/variables.scss";
-@import "../../../styles/mixins.scss";
+@import "/src/styles/variables";
+@import "/src/styles/mixins.scss";
 
 .sixSectionWrap{
   @include wrapper;
+  @include sectionBorderBottom;
+  @include sectionBorderTop;
   justify-content: center;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  border-color: $second-background-color;
 }
 
 .sixSectionBlocks {

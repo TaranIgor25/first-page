@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
+
 import { ISwipes } from "../../../types/interfaces";
 
 import style from "./secondarySection.module.scss";
 
 import { SliderControls } from "./SliderControls";
+
 
 let swipesArr: ISwipes[] = [
   { imgSwipe: "./img/carousel-item-01.jpg" },
