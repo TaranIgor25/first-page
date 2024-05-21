@@ -5,12 +5,12 @@ import Appy from "../components/Appy";
 
 function Router() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Index />}/>
         <Route path="/appy" element={<Appy />}/>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
