@@ -6,7 +6,9 @@ export const BurgerMenu = () => {
     <>
       <nav className={style.navBurger}>
         <div className={style.burgerWrap}>
-          <div className={style.logo}></div>
+          <Link to={"/"}>
+            <div className={style.logo}></div>
+          </Link>
           <ul className={style.burgerUl}>
             <li className={style.burgerLi}>About</li>
             <li className={style.burgerLi}>Blog</li>
@@ -19,7 +21,7 @@ export const BurgerMenu = () => {
               </ul>
             </li>
           </ul>
-          <Link to={'/appy'}>
+          <Link to={"/appy"}>
             <div className={style.requestBtn}>Request code</div>
           </Link>
         </div>

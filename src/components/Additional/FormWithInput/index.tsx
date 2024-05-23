@@ -16,24 +16,22 @@ export const FormWithInput: React.FC<IInputProps> = ({
   const refInput = useRef<HTMLInputElement>(null);
   const ref = useRef<HTMLElement>(null);
 
-  const [disabledInput, setDisabledInput] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>("");
 
-  const { requestCode } = useActions();
-  const open = useAppSelector((state) => state.open);
+  const isDisableInputState = useAppSelector((state) => state.disableInput);
+  const { isDisableInput, popup } = useActions();
 
   useEffect(() => {
-    if (open === true) {
-      setDisabledInput((disabledInput) => !disabledInput);
+    if (isDisableInputState === true) {
       setInputValue("");
     }
-  }, [open]);
+  }, [isDisableInputState]);
 
   return (
     <>
       <IMaskInput
         id={formId}
-        readOnly={disabledInput === false ? false : true}
+        readOnly={isDisableInputState === false ? false : true}
         className={inputClass}
         mask={"+{375}(00)000-00-00"}
         radix="."
@@ -45,16 +43,16 @@ export const FormWithInput: React.FC<IInputProps> = ({
         placeholder="+375(00)000-00-00"
       ></IMaskInput>
       <div
-        onClick={() => {
-          requestCode(inputValue);
-        }}
+        onClick={() =>
+          isDisableInputState ? "" : (isDisableInput(inputValue), popup("open"))
+        }
         className={
-          disabledInput === false
+          isDisableInputState === false
             ? btnClass
             : `${style.sentCodeBtn} ${btnClass}`
         }
       >
-        {disabledInput === false ? "Request code" : "Code sent"}
+        {isDisableInputState === false ? "Request code" : "Code sent"}
       </div>
     </>
   );

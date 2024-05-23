@@ -1,9 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { googleSheetsApi } from "./backEndApi";
+
 import { reducer as closeSectionReducer } from "./slices/closeSection.slice";
 import { reducer as openPopupReducer } from "./slices/openPopup.slice";
+import { reducer as isDisableInputReducer } from "./slices/disableInput.slice";
+
 
 const reducers = combineReducers({
+  disableInput: isDisableInputReducer,
   open: openPopupReducer,
   close: closeSectionReducer,
   [googleSheetsApi.reducerPath]: googleSheetsApi.reducer,

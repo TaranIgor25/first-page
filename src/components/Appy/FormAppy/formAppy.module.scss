@@ -18,6 +18,10 @@
   gap: 24px;
 }
 
+.errorMessage{
+  text-align: center;
+}
+
 @media screen and (max-width: $mobile-media) {
   .nameWrap{
     flex-direction: column;

@@ -26,7 +26,13 @@ export const FormAppy = () => {
   return isLoading ? (
     <Loader />
   ) : isError ? (
-    <div>Error</div>
+    <>
+      <p className={style.errorMessage}>429 TOO MANY REQUESTS.</p>
+      <p className={style.errorMessage}>
+        If you see this message, then the number of requests in my API today was
+        excessive!
+      </p>
+    </>
   ) : (
     <form className={style.formWrap}>
       <div className={style.nameWrap}>

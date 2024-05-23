@@ -1,16 +1,18 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export const openPopupSlice = createSlice({
-  name: 'openPopupSlice',
+  name: "openPopupSlice",
   initialState: false,
   reducers: {
-    requestCode: (state : boolean, actions : PayloadAction<String>) => {
-      if (actions.payload.length === 12) {
+    popup: (state: boolean, actions: PayloadAction<String>) => {
+      if (actions.payload === "open") {
         state = true;
+      } else if (actions.payload === "close") {
+        state = false;
       }
       return state;
     },
-  }
-})
+  },
+});
 
-export const {actions, reducer} = openPopupSlice;
+export const { actions, reducer } = openPopupSlice;

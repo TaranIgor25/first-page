@@ -55,9 +55,22 @@ export const SixSection = () => {
     </div>
   ));
 
-  const requestRender = data ? ( <div className={style.sixSectionBlocks}>{contentRender}</div>) : 
-  isError ? ( <div>The request failed</div>) : 
-  isLoading ? ( <Loader />) : ( "");
+  const requestRender = data ? (
+    <div className={style.sixSectionBlocks}>{contentRender}</div>
+  ) : isError ? (
+    <>
+      <p className={style.errorMessage}>429 TOO MANY REQUESTS.</p>
+      <p className={style.errorMessage}>
+        If you see this message, then the number of requests in my API today was
+        excessive! A list of reviews should be displayed in place of this
+        message.
+      </p>
+    </>
+  ) : isLoading ? (
+    <Loader />
+  ) : (
+    ""
+  );
 
   return (
     <>

@@ -1,38 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
+import ExitIcon from "./ExitIcon";
+
+import React, { useRef } from "react";
 
 import { useAppSelector } from "../../../hooks/tsHooks";
-import { useClicker } from "../../../hooks/useClicker";
-
-import ExitIcon from "./ExitIcon";
+import { useActions } from "../../../hooks/useActions";
 
 import style from "./popup.module.scss";
 
 export const Popup = () => {
   const popupRef = useRef<HTMLDivElement | null>(null);
-
-  const [openPopup, setOpenPopup] = useState<boolean>();
-
-  const open = useAppSelector((state) => state.open);
-
-  useClicker(popupRef, openPopup, setOpenPopup);
-
-  useEffect(() => {
-    if (open === true) {
-      setOpenPopup(true);
-    }
-  }, [open]);
+  const isPopupOpen = useAppSelector((state) => state.open);
+  const { popup } = useActions();
 
   return (
     <>
-      {openPopup && (
+      {isPopupOpen && (
         <div ref={popupRef} className={style.popup}>
           <div className={style.popupWrap}>
-            <div onClick={() => setOpenPopup(false)} className={style.exit}>
+            <div onClick={() => popup("close")} className={style.exit}>
               <ExitIcon />
             </div>
             <div className={style.contentWrap}>
               <h3 className={style.text}>Message sent!</h3>
-              <div onClick={() => setOpenPopup(false)} className={style.btnOk}>
+              <div onClick={() => popup("close")} className={style.btnOk}>
                 Ok
               </div>
             </div>

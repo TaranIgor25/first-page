@@ -24,7 +24,6 @@ const dropDownArr = [
 export const FixedSection = () => {
   const refDropDown = useRef<HTMLDivElement>(null);
 
-  const [visibleSection, setVisibleSection] = useState<boolean>(true);
   const [dropDown, setDropDown] = useState<boolean>();
   const [mobileMode, setMobileMode] = useState<boolean>(false);
 
@@ -32,11 +31,8 @@ export const FixedSection = () => {
   const close = useAppSelector((state) => state.close);
 
   useEffect(() => {
-    if (close === false) {
-      setVisibleSection(false);
-      if (mobileMode === true) {
-        setMobileMode(false);
-      }
+    if (close === false && mobileMode === true) {
+      setMobileMode(false);
     }
   }, [close, mobileMode]);
 
@@ -56,7 +52,7 @@ export const FixedSection = () => {
 
   return (
     <>
-      {visibleSection && (
+      {close && (
         <section className={style.fixSection}>
           <div className={style.fixWrap}>
             <div className={style.logoBlock}>
