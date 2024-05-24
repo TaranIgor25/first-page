@@ -1,5 +1,5 @@
 import FixedSection from "../Construction/FixedSection";
-import Header from "../Construction/Header/Header";
+import Header from "../Construction/Header";
 import FirstSection from "../Index/FirstSection/index";
 import FirstSectionFooter from "../Index/FirstSection/Footer";
 import SecondarySection from "../Index/SecondarySection";

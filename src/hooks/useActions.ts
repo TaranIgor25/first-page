@@ -4,7 +4,7 @@ import { bindActionCreators } from "@reduxjs/toolkit";
 import { actions as closeSectionActions } from "../store/slices/closeSection.slice";
 import { actions as openPopupActions } from "../store/slices/openPopup.slice";
 import { actions as isDisableInputActions } from "../store/slices/disableInput.slice";
-import { useAppDispatch } from "./tsHooks";
+import { useAppDispatch } from "./reduxHooks";
 
 const rootActions = {
   ...closeSectionActions, ...openPopupActions, ...isDisableInputActions

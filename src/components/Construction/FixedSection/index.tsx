@@ -4,7 +4,7 @@ import { TabletIcon } from "./img/TabletIcon";
 import { ComputerIcon } from "./img/ComputerIcon";
 import { ExitIcon } from "./img/ExitIcon";
 
-import { useAppSelector } from "../../../hooks/tsHooks";
+import { useAppSelector } from "../../../hooks/reduxHooks";
 import { useActions } from "../../../hooks/useActions";
 import { useClickOutside } from "../../../hooks/useClickOutside";
 

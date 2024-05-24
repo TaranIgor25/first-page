@@ -1,12 +1,12 @@
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
 
-import { useAppSelector } from "../../../hooks/tsHooks";
+import { useAppSelector } from "../../../hooks/reduxHooks";
 import { useClickOutside } from "../../../hooks/useClickOutside";
 
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 import style from "./header.module.scss";
-import RequestCodeBtn from "../../Additional/RequestCodeBtn/RequestCodeBtn";
+import RequestCodeBtn from "../../Additional/RequestCodeBtn";
 import { Link } from "react-router-dom";
 
 const whiteTheme = {

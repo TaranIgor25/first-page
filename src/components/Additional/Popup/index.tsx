@@ -1,8 +1,8 @@
-import ExitIcon from "./ExitIcon";
+import ExitIcon from "./img/ExitIcon";
 
 import React, { useRef } from "react";
 
-import { useAppSelector } from "../../../hooks/tsHooks";
+import { useAppSelector } from "../../../hooks/reduxHooks";
 import { useActions } from "../../../hooks/useActions";
 
 import style from "./popup.module.scss";

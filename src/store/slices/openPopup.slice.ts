@@ -5,7 +5,7 @@ export const openPopupSlice = createSlice({
   initialState: false,
   reducers: {
     popup: (state: boolean, actions: PayloadAction<String>) => {
-      if (actions.payload === "open") {
+      if (actions.payload.length === 12) {
         state = true;
       } else if (actions.payload === "close") {
         state = false;

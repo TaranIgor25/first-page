@@ -4,7 +4,7 @@ import { IMaskInput } from "react-imask";
 import { IInputProps } from "../../../types/interfaces";
 
 import { useActions } from "../../../hooks/useActions";
-import { useAppSelector } from "../../../hooks/tsHooks";
+import { useAppSelector } from "../../../hooks/reduxHooks";
 
 import style from "../../Index/FirstSection/firstSection.module.scss";
 
@@ -44,7 +44,7 @@ export const FormWithInput: React.FC<IInputProps> = ({
       ></IMaskInput>
       <div
         onClick={() =>
-          isDisableInputState ? "" : (isDisableInput(inputValue), popup("open"))
+          isDisableInputState ? "" : (isDisableInput(inputValue), popup(inputValue))
         }
         className={
           isDisableInputState === false

@@ -3,7 +3,7 @@ import RadioInput from "../RadioInput";
 import RequestCodeBtnAppy from "../RequestCodeBtnAppy";
 import SelectAppy from "../SelectAppy";
 import TextAreaAppy from "../TextAreaAppy";
-import Loader from "../../Additional/Loader/Loader";
+import Loader from "../../Additional/Loader";
 
 import { useState } from "react";
 import { IRequestBtnMessage } from "../../../types/interfaces";

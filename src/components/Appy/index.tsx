@@ -1,6 +1,5 @@
-import FixedSection from "../Construction/FixedSection";
 import Footer from "../Construction/Footer";
-import Header from "../Construction/Header/Header";
+import Header from "../Construction/Header";
 import style from "./appy.module.scss";
 import FormAppy from "./FormAppy";
 

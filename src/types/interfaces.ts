@@ -92,7 +92,7 @@ export interface IUser {
   img: string;
   name: string;
   link: string;
-  row_id: number;
+  row_id?: number;
 }
 
 export interface iColumnContent {
@@ -118,12 +118,6 @@ export interface ISwipes {
 export interface IColorBlock {
   class: string;
   img: string;
-}
-
-export interface ICommentArr {
-  img: string;
-  name: string;
-  link: string;
 }
 
 export interface IThirdSectionBtnArr {
